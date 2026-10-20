@@ -1000,29 +1000,29 @@
   skipBtn.addEventListener("click", reveal);
   $("replay").addEventListener("click", replay);
 
-  /* ---------- RSVP ---------- */
-  const form = $("rsvpForm");
-  const nameInput = $("guestName");
-  const noteInput = $("note");
-  const errorEl = $("formError");
-  const waLink = $("waLink");
-  const thanks = $("thanks");
-  const rows = $("rsvpEvents");
-  const sharing = $("sharing");
-  const separateHint = $("separateHint");
+  // /* ---------- RSVP ---------- */
+  // const form = $("rsvpForm");
+  // const nameInput = $("guestName");
+  // const noteInput = $("note");
+  // const errorEl = $("formError");
+  // const waLink = $("waLink");
+  // const thanks = $("thanks");
+  // const rows = $("rsvpEvents");
+  // const sharing = $("sharing");
+  // const separateHint = $("separateHint");
 
-  nameInput.value = guest ? capitalise(guest) : "";
+  // nameInput.value = guest ? capitalise(guest) : "";
 
-  // Only the events this guest is invited to (?e=...). Default: all of them.
-  const scope = (params.get("e") || "").split(",").map((s) => s.trim()).filter(Boolean);
-  let invitedEvents = CONFIG.events.filter((ev) => !scope.length || scope.includes(ev.id));
-  if (!invitedEvents.length) invitedEvents = CONFIG.events;
-  const invitedIds = new Set(invitedEvents.map((ev) => ev.id));
-  document.querySelectorAll(".event[data-event]").forEach((li) => { li.hidden = !invitedIds.has(li.dataset.event); });
-  if (invitedEvents.length < 2) $("quick").hidden = true;
-  $("eventsHeading").textContent = invitedEvents.length === 1 ? "Can you make it?" : "Which events can you join?";
+  // // Only the events this guest is invited to (?e=...). Default: all of them.
+  // const scope = (params.get("e") || "").split(",").map((s) => s.trim()).filter(Boolean);
+  // let invitedEvents = CONFIG.events.filter((ev) => !scope.length || scope.includes(ev.id));
+  // if (!invitedEvents.length) invitedEvents = CONFIG.events;
+  // const invitedIds = new Set(invitedEvents.map((ev) => ev.id));
+  // document.querySelectorAll(".event[data-event]").forEach((li) => { li.hidden = !invitedIds.has(li.dataset.event); });
+  // if (invitedEvents.length < 2) $("quick").hidden = true;
+  // $("eventsHeading").textContent = invitedEvents.length === 1 ? "Can you make it?" : "Which events can you join?";
 
-  // answers[id] = { coming, plusOne, room }, each true, false or null (not answered yet)
+  // // answers[id] = { coming, plusOne, room }, each true, false or null (not answered yet)
   const answers = {};
   // +1 and room answers carry over to the next event a guest joins, so they only change what differs.
   const last = { plusOne: null, room: null };
