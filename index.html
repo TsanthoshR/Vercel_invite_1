@@ -858,7 +858,7 @@
     ],
     // Preview only: used when the link has no ?to=
     // Add &e=wedding,reception to a link to invite that family to only those events.
-    demoGuest: "Aditya",
+    demoGuest: "Friends",
     calendar: {
       // All-day, 26 to 29 December. The end date is the day after the last event.
       start: "20261226",
@@ -873,7 +873,7 @@
 
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
-  /* Personal link, e.g. ?to=Aditya&e=wedding,reception */
+  /* Personal link, e.g. ?to=Friends&e=wedding,reception */
   const params = new URLSearchParams(window.location.search);
   const clean = (s) => (s || "").replace(/\s+/g, " ").trim().slice(0, 60);
   const guest = clean(params.get("to")) || CONFIG.demoGuest;
