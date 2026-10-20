@@ -532,12 +532,19 @@
   /* Getting there */
   .map-wrap{
     width: 100%;
-    aspect-ratio: 16/9;
-    min-height: 280px;
+    /* aspect-ratio: 16/9; */
+    /* min-height: 280px; */
+    height: 180px;
     margin: 1.5rem 0 2rem;
     border-radius: 0.75rem;
     overflow: hidden;
     border: 1px solid var(--rule);
+  }
+  .map-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
   }
   .venue-name { margin: 0; font-family: var(--serif); font-size: 1.6rem; line-height: 1.2; }
   .venue-address { margin: .25rem 0 0; }
@@ -790,7 +797,7 @@
     <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.4841964739344!2d72.91537817690246!3d19.042437482155115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c5e1e72edec7%3A0xc39d785fae3d6e2c!2sShakuntalam%20Hall%2C%20BARC%2C!5e0!3m2!1sen!2sin!4v1792522740676!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
     
-    <a class="btn-outline" data-map="Nagercoil, Tamil Nadu" href="https://www.google.com/maps">Open in Google Maps</a>
+    <!-- <a class="btn-outline" data-map="Nagercoil, Tamil Nadu" href="https://www.google.com/maps">Open in Google Maps</a> -->
     
     <dl class="facts">
       <div><dt>Flying in (26-28)</dt><dd>Thiruvananthapuram (TRV) and  Tuticorin (TCR) are the closes Airports.Madurai (IXM) and Tiruchirappalli (TRZ) are further away, will need another train journey.</dd></div>
