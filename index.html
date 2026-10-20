@@ -348,14 +348,14 @@
     display: grid;
     grid-template-columns: 5.5rem 1fr;
     gap: 1.25rem;
-    align-items: center;
+    align-items: start;
   }
-  .event-highligh .badge{
+  .event-highlight .badge{
     grid-column: 1 / -1;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.08rem;
-    color: var(--serif);
+    color: var(--muted);
     font-weight: 500;
   }
   .event-highlight .day{
@@ -381,7 +381,7 @@
     line-height: 1.45;
   }
 
-  @media (max-width: 24 rem) {
+  @media (max-width: 24rem) {
     .event-highlight { grid-template-columns: 1fr; gap: 0.75rem; }
   }
   /* RSVP */
