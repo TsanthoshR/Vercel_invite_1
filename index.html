@@ -689,42 +689,6 @@
     <h2 id="rsvp-title">Will you join us?</h2>
     <p class="lede">Please reply by 15 November so we can plan food, rooms and cabs.</p>
 
-    <form class="rsvp-form" id="rsvpForm" novalidate>
-      <div class="field">
-        <label class="field-label" for="guestName">Your name</label>
-        <input class="text-input" id="guestName" name="name" type="text" autocomplete="name" placeholder="Full name">
-      </div>
-
-      <p class="events-heading" id="eventsHeading">Which events can you join?</p>
-      <div class="quick" id="quick">
-        <button type="button" data-all="yes">We'll be at all of them</button>
-        <button type="button" data-all="no">We can't make any</button>
-      </div>
-      <div class="rsvp-events" id="rsvpEvents" role="group" aria-labelledby="eventsHeading"></div>
-
-      <fieldset class="sharing" id="sharing" hidden>
-        <legend>Sharing a room</legend>
-        <p class="sharing-text">At the resort, friends share rooms, with boys in one room and girls in another. Since you're bringing a +1, are you both okay with that?</p>
-        <div class="options">
-          <label class="opt"><input type="radio" name="sharing" value="share" id="shareYes"><span>Yes, we're happy to share</span></label>
-          <label class="opt"><input type="radio" name="sharing" value="separate" id="shareNo"><span>No, we'd like our own room</span></label>
-        </div>
-        <p class="sharing-hint" id="separateHint" hidden>No problem. We'll book a separate room for the two of you.</p>
-      </fieldset>
-
-      <div class="field">
-        <label class="field-label" for="note">Anything we should know?</label>
-        <textarea class="text-input" id="note" name="note" rows="3" placeholder="Food preferences, flight times, or a note for the two of us"></textarea>
-      </div>
-
-      <p class="form-error" id="formError" role="alert"></p>
-
-      <div class="actions">
-        <button type="submit" class="btn-primary">Send RSVP</button>
-        <a class="btn-link" id="waLink" href="https://wa.me/" target="_blank" rel="noopener">Reply on WhatsApp instead</a>
-      </div>
-    </form>
-
     <div class="thanks" id="thanks" tabindex="-1" hidden>
       <p class="thanks-title" id="thanksTitle"></p>
       <p id="thanksBody"></p>
