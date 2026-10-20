@@ -655,20 +655,20 @@
     margin-top: 2rem;
   }
 .travel-hub-card {
-  background: var(-field); 
-  border: lpx solid var(--rule); 
+  background: var(--field); 
+  border: 1px solid var(--rule); 
   border-radius: 0.75rem; 
   padding: 1.5rem 1.6rem;
 }
 .travel-hub-title { 
   margin: 0 0 1.25rem; 
-  font-family: var (--serif) ; 
+  font-family: var(--serif); 
   font-size: 1.35rem; 
   font-weight: 450; 
   display: flex; 
   justify-content: space-between; 
   align-items: baseline; 
-  border-bottom: lpx solid var (--rule); 
+  border-bottom: 1px solid var (--rule); 
   padding-bottom: 0.75rem;
 }
 .travel-hub-dates {
@@ -677,7 +677,7 @@
   color: var(--muted); 
   font-weight: 400;
 }
-travel-leg{
+.travel-leg{
   margin-bottom: 1.26rem;
 }
 .travel-leg:last-child { 
@@ -692,13 +692,13 @@ travel-leg{
   padding: 0.2rem 0.65rem; 
   border-radius: 999px; 
   background: var(--paper); 
-  border: lpx solid var(--rule);
+  border: 1px solid var(--rule);
   margin-bottom: 0.65rem;
 }
 .travel-routes {
   margin: 0; 
   display: grid; 
-  grid-template-columns: 5.5rem lfr; 
+  grid-template-columns: 5.5rem 1fr; 
   gap: 0.6rem 1rem; 
   font-size: 0.95rem;
 }
@@ -866,24 +866,25 @@ travel-leg{
     
     <div class="travel-hubs">
         <!-- Hub 1: Tamil Nadu --> 
-      <div class-"travel-hub-card"> 
+      <div class="travel-hub-card"> 
         <h3 class="travel-hub-title"> 
           <span>Tamil Nadu Celebrations</span> 
-          <span class-"travel-hub-dates">26-30 December</span> 
+          <span class="travel-hub-dates">26-30 December</span> 
         </h3>
         <!--  Inbound: Nagercoil -->
         <div class="travel-leg">
-          <span class=-travel-tag"sArrivals. For Nagercoil (26-28 Dac)</span> 
-          <dl class="traval-routes">
+          <span class="travel-tag">Arrivals · For Nagercoil (26-28 Dac)</span> 
+          <dl class="travel-routes">
             <dt>Airports</dt>
             <dd><strong>Thiruvananthapuram (TRV)</strong> and <strong>Tuticorin (TCR)</strong> are closest. 
-              <br>Madurai (IXM) &amp; Trichy (TRZ) are further amay and require another train journey.</dd> 
+              <br>Madurai (IXM) &amp; Trichy (TRZ) are further away and require another train journey.</dd> 
             <dt>Trains</dt>
-              <dd><strong"Nagercoil Railway Station</strong> is 10 minutes from the venue.</dd> </dl > </div>
+              <dd><strong>Nagercoil Railway Station</strong> is 10 minutes from the venue.</dd> </dl > </div>
+      
         
 <!-- Outbound: Virwdhunagar --> 
-        <div class="travel-tag">
-          <span class="travel-leg"> Departures · From Virudhunagar (29-39 Dac)</span> 
+        <div class="travel-leg">
+          <span class="travel-tag"> Departures · From Virudhunagar (29-39 Dac)</span> 
             <dl class="travel-routes"> 
               <dt>Airports</dt> 
               <dd><strong>Madurai (IXM)</strong> is the closest airport.</dd> 
@@ -891,7 +892,8 @@ travel-leg{
               <dd><strong>Virudhuager Railway Station</strong> is 10 minutes away. </dd> 
             </dl>
         </div>
-            
+
+      </div>
 <!-- Hub Mumbai --> 
         <div class="travel-hub-card">
           <h3 class="travel-hub-title">
@@ -905,17 +907,18 @@ travel-leg{
               <dt>Airports</dt>
             <dd>Both <strong>Mumbai International Airport (BOM)</strong> and <strong> Navi Mumbai Internation Airport (NMI)</strong>  are ~45mins by cab </dd>
               <dt>Trains</dt>
-              <dd><strong>Lolmanya Tilak Terminus (LTT)</strong>and <strong>Dadar</strong> for long-distance trains. <strong>Mranurd</strong> is the nearest local harbor-line station.</dd> </dl> </div </div>
+              <dd><strong>Lolmanya Tilak Terminus (LTT)</strong>, <strong>Dadar / CSMT </strong> for long-distance trains. <strong>Mankhurd</strong> is the nearest local harbor-line station.</dd> </dl> </div </div>
       </div>
 
 
           
-    <dl class="facts">
+    <!-- <dl class="facts">
       <div><dt>Flying in (26-28)</dt><dd>Thiruvananthapuram (TRV) and  Tuticorin (TCR) are the closes Airports.Madurai (IXM) and Tiruchirappalli (TRZ) are further away, will need another train journey.</dd></div>
       <div><dt>By train</dt><dd>Nagercoil Railway Station is 10 mins away.</dd></div>
       <div><dt>Flying out (29-30)</dt><dd>Madurai (IXM) is the closest Airport.</dd></div>
       <div><dt>By train</dt><dd>Virudhunagar Railway Station is 10 mins away.</dd></div>
-    </dl>
+    </dl> -->
+    
   </section>
 
   <section class="block" aria-labelledby="around-title">
