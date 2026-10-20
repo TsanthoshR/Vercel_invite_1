@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Santhosh and Theodosia are getting married in Goa, 26–29 December 2026.">
+<title>Santhosh &amp; Theodosia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300..500&display=swap">
+<noscript><style>.stage{display:none!important}body{overflow:auto!important}</style></noscript>
+<style>
+  :root {
+    --mist: #DCE3DB;
+    --betel: #2E4637;
+    --betel-deep: #203127;
+    --betel-light: #37523F;
+    --marigold: #E8A23A;
+    --marigold-hover: #F1B150;
+    --paper: #FBFBF8;
+    --ink: #1D2921;
+    --muted: #56645A;
+    --rule: #D5DCD4;
+    --field: #EFF2EC;
+    --on-accent: #1D2921;
+    --on-envelope: #E4EBE2;
+    --error: #A3332B;
+    --swatch-filter: drop-shadow(0 .35rem .45rem rgba(20, 32, 24, .22));
+    --serif: "Bodoni Moda", "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    --sans: "Jost", Futura, "Avenir Next", "Century Gothic", "Segoe UI", system-ui, sans-serif;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --mist: #0F1712;
+      --betel-deep: #1A2920;
+      --paper: #131B16;
+      --ink: #E6EBE3;
+      --muted: #A0ADA4;
+      --rule: #2A372E;
+      --field: #1A241E;
+      --error: #EFA39B;
+      --swatch-filter: drop-shadow(0 0 1px rgba(228, 235, 226, .5));
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --mist: #0F1712;
+    --betel-deep: #1A2920;
+    --paper: #131B16;
+    --ink: #E6EBE3;
+    --muted: #A0ADA4;
+    --rule: #2A372E;
+    --field: #1A241E;
+    --error: #EFA39B;
+    --swatch-filter: drop-shadow(0 0 1px rgba(228, 235, 226, .5));
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: inherit; }
+  [hidden] { display: none !important; }
+  html {
+    height: 100%;
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 350;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body.is-locked { overflow: hidden; }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* ---------- Envelope stage ---------- */
+  .stage {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(env(safe-area-inset-top, 0px) + 1.5rem) 1.25rem calc(env(safe-area-inset-bottom, 0px) + 1.5rem);
+    background-color: var(--mist);
+    overflow: hidden;
+    transition: background-color .8s ease, opacity .55s ease;
+  }
+  .stage-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding-top: 9vh;
+  }
+  .env {
+    position: relative;
+    width: min(84vw, 28rem);
+    aspect-ratio: 1.4 / 1;
+    perspective: 1400px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .env-back {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--betel-deep);
+    border-radius: 5px;
+    box-shadow: 0 2.25rem 3.5rem -1.5rem rgba(14, 28, 19, .5);
+    transition: transform .6s cubic-bezier(.5, 0, .75, 0), opacity .5s ease;
+  }
+
+  .card {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 6%;
+    height: 88%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .6em;
+    padding: 6% 8%;
+    text-align: center;
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .14), 0 .5rem 1.25rem -.5rem rgba(0, 0, 0, .25);
+    font-size: clamp(.62rem, 2.6vw, .82rem);
+    transition: transform 1s cubic-bezier(.2, .7, .2, 1), box-shadow .6s ease;
+  }
+  .card p { margin: 0; }
+  .card-lead, .card-date { color: var(--muted); }
+  .card-names { font-family: var(--serif); font-size: 2.2em; line-height: 1.1; text-wrap: balance; }
+
+  .pocket {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    transition: transform .6s cubic-bezier(.5, 0, .75, 0), opacity .5s ease;
+  }
+  .pocket-sides {
+    position: absolute;
+    inset: 0;
+    background: var(--betel);
+    border-radius: 0 0 5px 5px;
+    clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
+  }
+  .pocket-bottom-wrap { position: absolute; inset: 0; filter: drop-shadow(0 -1px 1.5px rgba(0, 0, 0, .25)); }
+  .pocket-bottom {
+    position: absolute;
+    inset: 0;
+    background: var(--betel-light);
+    border-radius: 0 0 5px 5px;
+    clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+  }
+
+  .flap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 58%;
+    z-index: 5;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    transition: transform .7s cubic-bezier(.45, .05, .25, 1), opacity .5s ease;
+  }
+  .flap-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .flap-face span { position: absolute; inset: 0; clip-path: polygon(0 0, 100% 0, 50% 100%); }
+  .flap-outer { filter: drop-shadow(0 2px 2.5px rgba(0, 0, 0, .3)); }
+  .flap-outer span { background: var(--betel); }
+  .flap-inner { transform: rotateX(180deg); opacity: 0; }
+  .flap-inner span {
+    background:
+      radial-gradient(circle, rgba(255, 255, 255, .55) 1.1px, transparent 1.6px) 0 0 / 10px 10px,
+      var(--marigold);
+  }
+
+  .seal {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    z-index: 6;
+    width: clamp(4.25rem, 22%, 6.25rem);
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .seal:focus-visible { outline-offset: 6px; border-radius: 50%; }
+  .seal-half { position: absolute; inset: 0; transition: transform .55s cubic-bezier(.3, .6, .4, 1), opacity .45s ease; }
+  .seal-half svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 3px 3px rgba(40, 24, 4, .35)); }
+  .seal-left { clip-path: polygon(0 0, 53% 0, 47% 22%, 55% 41%, 46% 60%, 54% 79%, 49% 100%, 0 100%); }
+  .seal-right { clip-path: polygon(53% 0, 100% 0, 100% 100%, 49% 100%, 54% 79%, 46% 60%, 55% 41%, 47% 22%); }
+
+  .env-to {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 8%;
+    z-index: 5;
+    margin: 0;
+    text-align: center;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(.9rem, 3.8vw, 1.15rem);
+    color: var(--on-envelope);
+    pointer-events: none;
+    transition: opacity .35s ease;
+  }
+  .stage-hint { margin: 0; color: var(--muted); font-size: .95rem; transition: opacity .35s ease; }
+  .stage-skip {
+    padding: .25rem .5rem;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font-size: .95rem;
+    text-decoration: underline;
+    text-underline-offset: .25em;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+    transition: opacity .35s ease;
+  }
+
+  /* Opening sequence */
+  .is-cracking .seal { pointer-events: none; }
+  .is-cracking .seal-left { transform: translate(-22%, 26%) rotate(-26deg); opacity: 0; }
+  .is-cracking .seal-right { transform: translate(22%, 30%) rotate(22deg); opacity: 0; }
+  .is-cracking .env-to, .is-cracking .stage-hint, .is-cracking .stage-skip { opacity: 0; pointer-events: none; }
+  .is-flap-open .flap { transform: rotateX(180deg); }
+  .is-flap-open .flap-outer { opacity: 0; transition: opacity 0s linear .33s; }
+  .is-flap-open .flap-inner { opacity: 1; transition: opacity 0s linear .33s; }
+  .is-flap-behind .flap { z-index: 2; }
+  .is-card-out .card { transform: translateY(-48%); }
+  .is-dropping .pocket, .is-dropping .env-back { transform: translateY(35%); opacity: 0; }
+  .is-dropping .flap { transform: translateY(35%) rotateX(180deg); opacity: 0; }
+  .stage.is-settling { background-color: var(--paper); }
+  .is-settling .card {
+    z-index: 7;
+    transform: translateY(0) scale(1.06);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  .stage.is-gone { opacity: 0; pointer-events: none; }
+  .is-resetting, .is-resetting * { transition: none !important; animation: none !important; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .seal { animation: breathe 2.8s ease-in-out infinite; }
+    .is-cracking .seal { animation: none; }
+  }
+  @keyframes breathe {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.045); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stage *, .stage *::before, .stage *::after { transition: none !important; animation: none !important; }
+    .stage { transition: opacity .25s ease; }
+  }
+
+  /* ---------- Invitation ---------- */
+  .invite { padding-inline: max(7vw, 1.5rem); }
+  .invite > * { max-width: 36rem; margin-inline: auto; }
+
+  .hero {
+    min-height: 88vh;
+    min-height: 88svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 3.5rem 2rem;
+  }
+  .hero-lead { margin: 0 0 1.25rem; color: var(--muted); }
+  .names {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(3.25rem, 16vw, 7.5rem);
+    line-height: .92;
+    letter-spacing: -.015em;
+    font-optical-sizing: auto;
+  }
+  .names:focus { outline: none; }
+  .names .amp { font-size: .45em; line-height: 1.4; padding-left: .12em; }
+  .hero-line { margin: 1.75rem 0 0; font-size: 1.125rem; }
+  .hero-when { margin: 2.25rem 0 0; font-size: 1.125rem; font-weight: 450; line-height: 1.5; }
+
+  .block { padding-top: 4.5rem; }
+  .block > h2 {
+    margin: 0 0 .75rem;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.1rem, 8.5vw, 2.8rem);
+    line-height: 1.08;
+    letter-spacing: -.01em;
+  }
+  .lede { margin: 0 0 2rem; color: var(--muted); }
+
+  /* Events */
+  .events { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .event {
+    display: grid;
+    grid-template-columns: 4.75rem 1fr;
+    gap: 1rem;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .event-date { margin: 0; display: flex; flex-direction: column; }
+  .event-date .day { font-family: var(--serif); font-size: 2.75rem; line-height: 1; }
+  .event-date .weekday { margin-top: .4rem; font-size: .875rem; color: var(--muted); }
+  .event-body h3 { margin: .15rem 0 .35rem; font-size: 1.1875rem; font-weight: 500; line-height: 1.3; }
+  .event-body p { margin: 0; }
+  .pending { color: var(--muted); }
+  .section-link { display: inline-block; margin-top: 1.25rem; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+
+  /* RSVP */
+  .rsvp-form { margin: 0; }
+  .field { margin: 0 0 1.75rem; padding: 0; border: 0; min-width: 0; }
+  .field-label { display: block; margin: 0 0 .55rem; padding: 0; font-weight: 450; }
+  .text-input {
+    display: block;
+    width: 100%;
+    padding: .8rem .9rem;
+    font: inherit;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--field);
+    border: 0;
+    border-bottom: 1px solid var(--muted);
+    border-radius: .5rem .5rem 0 0;
+  }
+  .text-input::placeholder { color: var(--muted); opacity: .85; }
+  .text-input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  textarea.text-input { min-height: 6.5rem; resize: vertical; }
+
+  .events-heading { margin: 0 0 .35rem; font-weight: 450; }
+  .quick { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; margin: 0 0 1rem; }
+  .quick button {
+    padding: .2rem 0;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font-size: .95rem;
+    text-decoration: underline;
+    text-underline-offset: .25em;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+  }
+
+  .rsvp-events { margin: 0 0 1.75rem; border-top: 1px solid var(--rule); }
+  .rsvp-event { margin: 0; padding: 1.25rem 0; border: 0; border-bottom: 1px solid var(--rule); min-width: 0; }
+  .rsvp-event > legend { float: left; width: 100%; margin: 0 0 .85rem; padding: 0; }
+  .rsvp-event > legend + * { clear: both; }
+  .rsvp-event-name { display: block; font-size: 1.125rem; font-weight: 500; line-height: 1.3; }
+  .rsvp-event-when { display: block; font-size: .95rem; color: var(--muted); }
+  .rsvp-toggle { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .pill { position: relative; display: inline-block; }
+  .pill input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+  .pill span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: .55rem 1.2rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .pill input:checked + span { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .pill input:focus-visible + span { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .rsvp-event.is-missing > .rsvp-toggle .pill span, .sub.is-missing .pill span { border-color: var(--error); }
+
+  /* Follow-up questions for an event the guest is joining */
+  .followups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem 1.5rem;
+    margin-top: 1rem;
+    padding: 1rem 1.1rem 1.1rem;
+    background: var(--field);
+    border-radius: .75rem;
+  }
+  .sub { margin: 0; padding: 0; border: 0; min-width: 0; }
+  .sub > legend { float: left; width: 100%; margin: 0 0 .5rem; padding: 0; font-size: .95rem; font-weight: 450; }
+  .sub > legend + * { clear: both; }
+  .sub .pill span { min-height: 2.5rem; padding: .45rem 1.15rem; background: var(--paper); }
+
+  /* Room sharing: asked once, when a guest brings a +1 and needs a room */
+  .sharing { margin: 0 0 1.75rem; padding: 1.1rem 1.1rem 1.2rem; border: 0; min-width: 0; background: var(--field); border-radius: .75rem; }
+  .sharing > legend { float: left; width: 100%; margin: 0 0 .35rem; padding: 0; font-weight: 500; }
+  .sharing > legend + * { clear: both; }
+  .sharing-text { margin: 0 0 1rem; color: var(--muted); }
+  .options { display: grid; gap: .5rem; }
+  .opt { position: relative; display: block; }
+  .opt input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+  .opt span {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .8rem 1rem;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: .65rem;
+    transition: border-color .2s ease;
+  }
+  .opt span::before {
+    content: "";
+    flex: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--muted);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 3px var(--paper);
+  }
+  .opt input:checked + span { border-color: var(--ink); }
+  .opt input:checked + span::before { background: var(--ink); border-color: var(--ink); }
+  .opt input:focus-visible + span { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .sharing.is-missing .opt span { border-color: var(--error); }
+  .sharing-hint { margin: .85rem 0 0; }
+
+  .form-error { min-height: 1.6em; margin: 0; color: var(--error); font-weight: 450; }
+  .actions { display: flex; flex-direction: column; align-items: flex-start; gap: 1.1rem; margin-top: 1rem; }
+  .btn-primary {
+    padding: 1rem 2.1rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--marigold);
+    color: var(--on-accent);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color .2s ease;
+  }
+  .btn-primary:hover { background: var(--marigold-hover); }
+  .btn-link {
+    padding: .2rem 0;
+    border: 0;
+    background: none;
+    text-decoration: underline;
+    text-underline-offset: .25em;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+  }
+  .btn-outline {
+    display: inline-flex;
+    margin-top: 1.25rem;
+    padding: .8rem 1.4rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 450;
+  }
+
+  .thanks { padding-top: .5rem; }
+  .thanks:focus { outline: none; }
+  .thanks p { margin: 0 0 .75rem; }
+  .thanks .thanks-title { margin-bottom: .5rem; font-family: var(--serif); font-size: 1.9rem; line-height: 1.15; }
+  .thanks .preview-note { color: var(--muted); font-size: .95rem; }
+  .thanks-list { list-style: none; margin: 0 0 1.25rem; padding: 0; border-top: 1px solid var(--rule); }
+  .thanks-list li { display: flex; justify-content: space-between; gap: 1rem; padding-block: .6rem; border-bottom: 1px solid var(--rule); }
+  .thanks-list .val { color: var(--muted); text-align: right; }
+
+  /* Getting there */
+  .venue-name { margin: 0; font-family: var(--serif); font-size: 1.6rem; line-height: 1.2; }
+  .venue-address { margin: .25rem 0 0; }
+  .facts { margin: 2.25rem 0 0; display: grid; gap: 1.25rem; }
+  .facts div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; }
+  .facts dt { font-weight: 450; }
+  .facts dd { margin: 0; color: var(--muted); }
+  @media (max-width: 24rem) {
+    .facts div { grid-template-columns: 1fr; gap: .15rem; }
+  }
+
+  /* Places */
+  .places { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; }
+  .places h3 { margin: 0 0 .2rem; font-family: var(--serif); font-weight: 400; font-size: 1.5rem; line-height: 1.2; }
+  .places p { margin: 0 0 .35rem; color: var(--muted); }
+  .places a { text-underline-offset: .25em; text-decoration-thickness: 1px; }
+
+  /* Contacts */
+  .contacts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .contacts li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem 1.5rem;
+    padding-block: 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .contact-name { margin: 0; font-weight: 500; }
+  .contact-role { margin: 0; font-size: .95rem; color: var(--muted); }
+  .contact-num { margin: .2rem 0 0; font-size: .95rem; font-variant-numeric: tabular-nums; }
+  .contact-actions { display: flex; gap: .5rem; }
+  .contact-actions a { padding: .55rem 1.1rem; border: 1px solid var(--rule); border-radius: 999px; text-decoration: none; }
+
+  /* Dress code */
+  .dress { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .dress li {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .dress h3 { margin: 0; font-size: 1.1875rem; font-weight: 500; line-height: 1.3; }
+  .dress-when { display: block; margin-top: .15rem; font-size: .95rem; font-weight: 350; color: var(--muted); }
+  .dress-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: .9rem 1.5rem;
+    margin: .9rem 0 0;
+  }
+  .dress-list dt { font-size: .9rem; color: var(--muted); }
+  .dress-list dd { margin: .1rem 0 0; font-family: var(--serif); font-size: 1.5rem; line-height: 1.2; }
+  .dress-list dd.pending { font-style: italic; }
+
+  /* Fabric swatches with pinked edges */
+  .swatch-wrap { display: block; width: 4rem; aspect-ratio: 1; margin-top: .25rem; filter: var(--swatch-filter); }
+  .swatch { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; clip-path: polygon(0% 0%, 6.25% 4.5%, 12.5% 0%, 18.75% 4.5%, 25% 0%, 31.25% 4.5%, 37.5% 0%, 43.75% 4.5%, 50% 0%, 56.25% 4.5%, 62.5% 0%, 68.75% 4.5%, 75% 0%, 81.25% 4.5%, 87.5% 0%, 93.75% 4.5%, 100% 0%, 95.5% 6.25%, 100% 12.5%, 95.5% 18.75%, 100% 25%, 95.5% 31.25%, 100% 37.5%, 95.5% 43.75%, 100% 50%, 95.5% 56.25%, 100% 62.5%, 95.5% 68.75%, 100% 75%, 95.5% 81.25%, 100% 87.5%, 95.5% 93.75%, 100% 100%, 93.75% 95.5%, 87.5% 100%, 81.25% 95.5%, 75% 100%, 68.75% 95.5%, 62.5% 100%, 56.25% 95.5%, 50% 100%, 43.75% 95.5%, 37.5% 100%, 31.25% 95.5%, 25% 100%, 18.75% 95.5%, 12.5% 100%, 6.25% 95.5%, 0% 100%, 4.5% 93.75%, 0% 87.5%, 4.5% 81.25%, 0% 75%, 4.5% 68.75%, 0% 62.5%, 4.5% 56.25%, 0% 50%, 4.5% 43.75%, 0% 37.5%, 4.5% 31.25%, 0% 25%, 4.5% 18.75%, 0% 12.5%, 4.5% 6.25%); }
+  .swatch-sangeet {
+    background:
+      radial-gradient(circle, #FFFFFF 0 .5px, rgba(255, 236, 190, .55) .9px, transparent 1.9px) 1px 2px / 13px 11px,
+      radial-gradient(circle, #FFE7AE 0 .45px, rgba(255, 214, 140, .45) .9px, transparent 1.7px) 6px 0 / 17px 19px,
+      radial-gradient(120% 95% at 22% 18%, rgba(214, 186, 255, .3), transparent 62%),
+      radial-gradient(circle at 38% 34%, #9A8BB8 0 .55px, #3B3152 1.3px, #1A1524 2.05px, transparent 2.35px) 0 0 / 5px 5px,
+      radial-gradient(circle at 38% 34%, #B39860 0 .55px, #4A3D29 1.3px, #1E1912 2.05px, transparent 2.35px) 2.5px 2.5px / 5px 5px,
+      #0B0A10;
+  }
+  .swatch-sangeet::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .32) 50%, transparent 70%);
+    transform: translateX(-110%);
+  }
+  .swatch-wedding {
+    background:
+      repeating-linear-gradient(-45deg, rgba(255, 255, 255, .07) 0 1px, transparent 1px 3px),
+      linear-gradient(160deg, #2B2E30, #0D0F10);
+  }
+  .swatch-reception {
+    background:
+      radial-gradient(circle, #2E4637 0 1.1px, transparent 1.6px) 0 0 / 14px 14px,
+      radial-gradient(circle at 50% 33%, #E8A23A 0 1.7px, transparent 2.2px) 0 0 / 14px 14px,
+      radial-gradient(circle at 50% 67%, #E8A23A 0 1.7px, transparent 2.2px) 0 0 / 14px 14px,
+      radial-gradient(circle at 33% 50%, #E8A23A 0 1.7px, transparent 2.2px) 0 0 / 14px 14px,
+      radial-gradient(circle at 67% 50%, #E8A23A 0 1.7px, transparent 2.2px) 0 0 / 14px 14px,
+      radial-gradient(circle, #B4532F 0 1.2px, transparent 1.7px) 7px 7px / 14px 14px,
+      #F3E8D4;
+  }
+  @keyframes sheen {
+    0%, 55% { transform: translateX(-110%); }
+    100% { transform: translateX(110%); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .swatch-sangeet::after { animation: sheen 4.5s ease-in-out infinite; }
+  }
+
+  /* Footer */
+  .foot { display: flex; flex-direction: column; align-items: flex-start; gap: .9rem; padding-block: 5.5rem 4rem; }
+  .foot-mono { margin: 0 0 .5rem; font-family: var(--serif); font-size: 2.5rem; line-height: 1; }
+  .foot a { text-underline-offset: .25em; text-decoration-thickness: 1px; }
+</style>
+</head>
+<body class="is-locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="wax" cx="36%" cy="30%" r="78%">
+      <stop offset="0" stop-color="#F7CB78"/>
+      <stop offset=".45" stop-color="#E8A23A"/>
+      <stop offset=".85" stop-color="#C47F20"/>
+      <stop offset="1" stop-color="#A26615"/>
+    </radialGradient>
+    <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <symbol id="seal-art" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="44" fill="url(#wax)" filter="url(#rough)"/>
+      <circle cx="50" cy="50" r="31" fill="none" stroke="#B9791D" stroke-width="2.2" opacity=".75"/>
+      <circle cx="50.8" cy="50.8" r="31" fill="none" stroke="#FBD89A" stroke-width="1" opacity=".5"/>
+      <text x="50.7" y="58.7" text-anchor="middle" font-family="'Bodoni Moda', Didot, Georgia, serif" font-size="23" fill="#FBD89A" opacity=".6">S&amp;T</text>
+      <text x="50" y="58" text-anchor="middle" font-family="'Bodoni Moda', Didot, Georgia, serif" font-size="23" fill="#A96A16">S&amp;T</text>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="stage" id="stage">
+  <div class="stage-inner">
+    <div class="env" id="env">
+      <div class="env-back"></div>
+      <div class="card" aria-hidden="true">
+        <p class="card-lead">Together with their families</p>
+        <p class="card-names">Santhosh &amp; Theodosia</p>
+        <p class="card-date">26–29 December 2026, Goa</p>
+      </div>
+      <div class="pocket" aria-hidden="true">
+        <div class="pocket-sides"></div>
+        <div class="pocket-bottom-wrap"><div class="pocket-bottom"></div></div>
+      </div>
+      <div class="flap" aria-hidden="true">
+        <div class="flap-face flap-outer"><span></span></div>
+        <div class="flap-face flap-inner"><span></span></div>
+      </div>
+      <p class="env-to" id="envTo">For you</p>
+      <button class="seal" id="seal" type="button" aria-label="Open the invitation">
+        <span class="seal-half seal-left"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-art"/></svg></span>
+        <span class="seal-half seal-right"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-art"/></svg></span>
+      </button>
+    </div>
+    <p class="stage-hint">Tap the seal to open</p>
+    <button class="stage-skip" id="skipBtn" type="button" hidden>Skip to the details</button>
+  </div>
+</div>
+
+<main class="invite" id="invite">
+  <header class="hero">
+    <p class="hero-lead">Together with their families</p>
+    <h1 class="names" id="names" tabindex="-1">
+      <span>Santhosh</span>
+      <span class="amp">&amp;</span>
+      <span>Theodosia</span>
+    </h1>
+    <p class="hero-line">invite you to celebrate their wedding</p>
+    <p class="hero-when">26–29 December 2026<br>Assagao, Goa</p>
+  </header>
+
+  <section class="block" aria-labelledby="events-title">
+    <h2 id="events-title">The celebrations</h2>
+    <ol class="events">
+      <li class="event" data-event="sangeet">
+        <p class="event-date"><span class="day">26</span><span class="weekday">Saturday</span></p>
+        <div class="event-body">
+          <h3>Sangeet</h3>
+          <p>Evening<br>Poolside, The Palm Courtyard</p>
+        </div>
+      </li>
+      <li class="event" data-event="dinner">
+        <p class="event-date"><span class="day">27</span><span class="weekday">Sunday</span></p>
+        <div class="event-body">
+          <h3>Dinner</h3>
+          <p>Evening<br>The terrace, The Palm Courtyard</p>
+        </div>
+      </li>
+      <li class="event" data-event="wedding">
+        <p class="event-date"><span class="day">28</span><span class="weekday">Monday</span></p>
+        <div class="event-body">
+          <h3>Wedding</h3>
+          <p><span class="pending">Time to follow</span><br>The garden, The Palm Courtyard</p>
+        </div>
+      </li>
+      <li class="event" data-event="reception">
+        <p class="event-date"><span class="day">29</span><span class="weekday">Tuesday</span></p>
+        <div class="event-body">
+          <h3>Reception</h3>
+          <p><span class="pending">Time to follow</span><br>The lawns, The Palm Courtyard</p>
+        </div>
+      </li>
+    </ol>
+    <a class="section-link" href="#dress">See the dress code</a>
+  </section>
+
+  <section class="block" id="rsvp" aria-labelledby="rsvp-title">
+    <h2 id="rsvp-title">Will you join us?</h2>
+    <p class="lede">Please reply by 15 November so we can plan food, rooms and cabs.</p>
+
+    <form class="rsvp-form" id="rsvpForm" novalidate>
+      <div class="field">
+        <label class="field-label" for="guestName">Your name</label>
+        <input class="text-input" id="guestName" name="name" type="text" autocomplete="name" placeholder="Full name">
+      </div>
+
+      <p class="events-heading" id="eventsHeading">Which events can you join?</p>
+      <div class="quick" id="quick">
+        <button type="button" data-all="yes">We'll be at all of them</button>
+        <button type="button" data-all="no">We can't make any</button>
+      </div>
+      <div class="rsvp-events" id="rsvpEvents" role="group" aria-labelledby="eventsHeading"></div>
+
+      <fieldset class="sharing" id="sharing" hidden>
+        <legend>Sharing a room</legend>
+        <p class="sharing-text">At the resort, friends share rooms, with boys in one room and girls in another. Since you're bringing a +1, are you both okay with that?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="sharing" value="share" id="shareYes"><span>Yes, we're happy to share</span></label>
+          <label class="opt"><input type="radio" name="sharing" value="separate" id="shareNo"><span>No, we'd like our own room</span></label>
+        </div>
+        <p class="sharing-hint" id="separateHint" hidden>No problem. We'll book a separate room for the two of you.</p>
+      </fieldset>
+
+      <div class="field">
+        <label class="field-label" for="note">Anything we should know?</label>
+        <textarea class="text-input" id="note" name="note" rows="3" placeholder="Food preferences, flight times, or a note for the two of us"></textarea>
+      </div>
+
+      <p class="form-error" id="formError" role="alert"></p>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Send RSVP</button>
+        <a class="btn-link" id="waLink" href="https://wa.me/" target="_blank" rel="noopener">Reply on WhatsApp instead</a>
+      </div>
+    </form>
+
+    <div class="thanks" id="thanks" tabindex="-1" hidden>
+      <p class="thanks-title" id="thanksTitle"></p>
+      <p id="thanksBody"></p>
+      <ul class="thanks-list" id="thanksList" hidden></ul>
+      <p class="preview-note">This is a preview, so replies aren't saved yet.</p>
+      <button type="button" class="btn-link" id="editReply">Change my reply</button>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="travel-title">
+    <h2 id="travel-title">Getting there</h2>
+    <p class="venue-name">The Palm Courtyard</p>
+    <p class="venue-address">Assagao, North Goa</p>
+    <a class="btn-outline" data-map="The Palm Courtyard, Assagao, Goa" href="https://www.google.com/maps">Open in Google Maps</a>
+    <dl class="facts">
+      <div><dt>Flying in</dt><dd>Mopa airport (GOX) is about 45 minutes away by road, Dabolim (GOI) about 75.</dd></div>
+      <div><dt>By train</dt><dd>Thivim station is about 25 minutes away.</dd></div>
+      <div><dt>Airport cabs</dt><dd>We're running shuttles from both airports on 26 December. Add your flight times to your RSVP note.</dd></div>
+      <div><dt>Where to stay</dt><dd>Tell us in your RSVP which nights you need a room, and we'll arrange it at the resort.</dd></div>
+    </dl>
+  </section>
+
+  <section class="block" aria-labelledby="around-title">
+    <h2 id="around-title">While you're in Goa</h2>
+    <p class="lede">A few of our favourite things nearby, if you're staying on.</p>
+    <ul class="places">
+      <li>
+        <h3>Chapora Fort</h3>
+        <p>Climb up at sunset for the view over the river mouth. 15 minutes away.</p>
+        <a data-map="Chapora Fort, Goa" href="https://www.google.com/maps">Show on map</a>
+      </li>
+      <li>
+        <h3>Fontainhas</h3>
+        <p>Panjim's old Latin quarter, all colourful houses and quiet lanes. 40 minutes away.</p>
+        <a data-map="Fontainhas, Panjim, Goa" href="https://www.google.com/maps">Show on map</a>
+      </li>
+      <li>
+        <h3>Anjuna flea market</h3>
+        <p>Wednesdays only. Go early and bargain hard. 15 minutes away.</p>
+        <a data-map="Anjuna Flea Market, Goa" href="https://www.google.com/maps">Show on map</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block" aria-labelledby="help-title">
+    <h2 id="help-title">Questions?</h2>
+    <p class="lede">Call or message either of them. They know everything we know.</p>
+    <ul class="contacts">
+      <li>
+        <div>
+          <p class="contact-name">Rohan</p>
+          <p class="contact-role">For travel, rooms and cabs</p>
+          <p class="contact-num">+91 90000 00001</p>
+        </div>
+        <div class="contact-actions">
+          <a href="tel:+919000000001">Call</a>
+          <a href="https://wa.me/919000000001" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="contact-name">Meera</p>
+          <p class="contact-role">For anything on the day</p>
+          <p class="contact-num">+91 90000 00002</p>
+        </div>
+        <div class="contact-actions">
+          <a href="tel:+919000000002">Call</a>
+          <a href="https://wa.me/919000000002" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block" id="dress" aria-labelledby="dress-title">
+    <h2 id="dress-title">Dress code</h2>
+    <ul class="dress">
+      <li>
+        <span class="swatch-wrap" aria-hidden="true"><span class="swatch swatch-sangeet"></span></span>
+        <div>
+          <h3>Sangeet <span class="dress-when">Saturday 26 December</span></h3>
+          <dl class="dress-list">
+            <div><dt>Everyone</dt><dd>Dark and flashy</dd></div>
+          </dl>
+        </div>
+      </li>
+      <li>
+        <span class="swatch-wrap" aria-hidden="true"><span class="swatch swatch-wedding"></span></span>
+        <div>
+          <h3>Wedding <span class="dress-when">Monday 28 December</span></h3>
+          <dl class="dress-list">
+            <div><dt>Men</dt><dd>Black suit</dd></div>
+            <div><dt>Women</dt><dd class="pending">Details to follow</dd></div>
+          </dl>
+        </div>
+      </li>
+      <li>
+        <span class="swatch-wrap" aria-hidden="true"><span class="swatch swatch-reception"></span></span>
+        <div>
+          <h3>Reception <span class="dress-when">Tuesday 29 December</span></h3>
+          <dl class="dress-list">
+            <div><dt>Everyone</dt><dd>Ethnic wear</dd></div>
+          </dl>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="foot">
+    <p class="foot-mono">S &amp; T</p>
+    <a id="calLink" href="https://calendar.google.com/" target="_blank" rel="noopener">Add the dates to Google Calendar</a>
+    <button type="button" class="btn-link" id="replay">Open the envelope again</button>
+  </footer>
+</main>
+
+<script>
+(() => {
+  "use strict";
+
+  /* Edit these for the real invite. */
+  const CONFIG = {
+    couple: "Santhosh & Theodosia",
+    // Your WhatsApp number with country code, digits only, e.g. "919876543210".
+    // Leave it empty and WhatsApp lets the guest pick who to send the reply to.
+    whatsappNumber: "",
+    venue: "The Palm Courtyard, Assagao, Goa",
+    events: [
+      { id: "sangeet", name: "Sangeet", when: "Saturday 26 December, evening" },
+      { id: "dinner", name: "Dinner", when: "Sunday 27 December, evening" },
+      { id: "wedding", name: "Wedding", when: "Monday 28 December" },
+      { id: "reception", name: "Reception", when: "Tuesday 29 December" }
+    ],
+    // Preview only: used when the link has no ?to=
+    // Add &e=wedding,reception to a link to invite that family to only those events.
+    demoGuest: "Aditya",
+    calendar: {
+      // All-day, 26 to 29 December. The end date is the day after the last event.
+      start: "20261226",
+      end: "20261230",
+      details: "Sangeet on the 26th, dinner on the 27th, wedding on the 28th and reception on the 29th."
+    }
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+  /* Personal link, e.g. ?to=Aditya&e=wedding,reception */
+  const params = new URLSearchParams(window.location.search);
+  const clean = (s) => (s || "").replace(/\s+/g, " ").trim().slice(0, 60);
+  const guest = clean(params.get("to")) || CONFIG.demoGuest;
+  const capitalise = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+  /* ---------- Envelope ---------- */
+  const stage = $("stage");
+  const env = $("env");
+  const seal = $("seal");
+  const skipBtn = $("skipBtn");
+  const invite = $("invite");
+  const names = $("names");
+  const STATES = ["is-cracking", "is-flap-open", "is-flap-behind", "is-card-out", "is-dropping", "is-settling"];
+
+  $("envTo").textContent = guest ? `For ${guest}` : "For you";
+  invite.inert = true;
+
+  let seen = false;
+  try { seen = localStorage.getItem("invite-opened") === "1"; } catch (e) { /* storage unavailable */ }
+  if (seen) skipBtn.hidden = false;
+
+  let opening = false;
+
+  async function openEnvelope() {
+    if (opening) return;
+    opening = true;
+    if (reduceMotion) { reveal(); return; }
+    stage.classList.add("is-cracking");
+    await wait(380);
+    stage.classList.add("is-flap-open");
+    await wait(720);
+    stage.classList.add("is-flap-behind", "is-card-out");
+    await wait(1050);
+    stage.classList.add("is-dropping");
+    await wait(450);
+    stage.classList.add("is-settling");
+    await wait(850);
+    reveal();
+  }
+
+  function reveal() {
+    opening = true;
+    try { localStorage.setItem("invite-opened", "1"); } catch (e) { /* storage unavailable */ }
+    window.scrollTo(0, 0);
+    invite.inert = false;
+    document.body.classList.remove("is-locked");
+    stage.classList.add("is-gone");
+    setTimeout(() => { if (stage.classList.contains("is-gone")) stage.hidden = true; }, reduceMotion ? 260 : 600);
+    names.focus({ preventScroll: true });
+  }
+
+  function replay() {
+    stage.classList.add("is-resetting");
+    stage.classList.remove(...STATES);
+    stage.hidden = false;
+    void stage.offsetWidth;
+    stage.classList.remove("is-resetting");
+    document.body.classList.add("is-locked");
+    invite.inert = true;
+    opening = false;
+    skipBtn.hidden = false;
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      stage.classList.remove("is-gone");
+      seal.focus({ preventScroll: true });
+    });
+  }
+
+  seal.addEventListener("click", (e) => { e.stopPropagation(); openEnvelope(); });
+  env.addEventListener("click", openEnvelope);
+  skipBtn.addEventListener("click", reveal);
+  $("replay").addEventListener("click", replay);
+
+  /* ---------- RSVP ---------- */
+  const form = $("rsvpForm");
+  const nameInput = $("guestName");
+  const noteInput = $("note");
+  const errorEl = $("formError");
+  const waLink = $("waLink");
+  const thanks = $("thanks");
+  const rows = $("rsvpEvents");
+  const sharing = $("sharing");
+  const separateHint = $("separateHint");
+
+  nameInput.value = guest ? capitalise(guest) : "";
+
+  // Only the events this guest is invited to (?e=...). Default: all of them.
+  const scope = (params.get("e") || "").split(",").map((s) => s.trim()).filter(Boolean);
+  let invitedEvents = CONFIG.events.filter((ev) => !scope.length || scope.includes(ev.id));
+  if (!invitedEvents.length) invitedEvents = CONFIG.events;
+  const invitedIds = new Set(invitedEvents.map((ev) => ev.id));
+  document.querySelectorAll(".event[data-event]").forEach((li) => { li.hidden = !invitedIds.has(li.dataset.event); });
+  if (invitedEvents.length < 2) $("quick").hidden = true;
+  $("eventsHeading").textContent = invitedEvents.length === 1 ? "Can you make it?" : "Which events can you join?";
+
+  // answers[id] = { coming, plusOne, room }, each true, false or null (not answered yet)
+  const answers = {};
+  // +1 and room answers carry over to the next event a guest joins, so they only change what differs.
+  const last = { plusOne: null, room: null };
+
+  function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function pills(name, q, options) {
+    const wrap = el("div", "rsvp-toggle");
+    options.forEach(([value, text]) => {
+      const label = el("label", "pill");
+      const input = el("input");
+      input.type = "radio";
+      input.name = name;
+      input.id = `${name}-${value}`;
+      input.value = value;
+      input.dataset.q = q;
+      label.append(input, el("span", "", text));
+      wrap.append(label);
+    });
+    return wrap;
+  }
+
+  function question(id, q, text) {
+    const fs = el("fieldset", "sub");
+    fs.dataset.q = q;
+    fs.append(el("legend", "", text), pills(`${q}-${id}`, q, [["yes", "Yes"], ["no", "No"]]));
+    return fs;
+  }
+
+  function buildRow(ev) {
+    const fs = el("fieldset", "rsvp-event");
+    fs.dataset.id = ev.id;
+    const legend = el("legend");
+    legend.append(el("span", "rsvp-event-name", ev.name), el("span", "rsvp-event-when", ev.when));
+    const more = el("div", "followups");
+    more.hidden = true;
+    more.append(question(ev.id, "plusOne", "Bringing a +1?"), question(ev.id, "room", "Need a room that night?"));
+    fs.append(legend, pills(`coming-${ev.id}`, "coming", [["yes", "Joining"], ["no", "Can't join"]]), more);
+    answers[ev.id] = { coming: null, plusOne: null, room: null };
+    return fs;
+  }
+
+  invitedEvents.forEach((ev) => rows.append(buildRow(ev)));
+  const rowFor = (id) => rows.querySelector(`[data-id="${id}"]`);
+
+  function renderRow(id) {
+    const fs = rowFor(id);
+    const a = answers[id];
+    fs.querySelectorAll("input[data-q]").forEach((input) => {
+      const value = a[input.dataset.q];
+      input.checked = value !== null && input.value === (value ? "yes" : "no");
+    });
+    fs.querySelector(".followups").hidden = a.coming !== true;
+    if (a.coming !== null) fs.classList.remove("is-missing");
+    fs.querySelectorAll(".sub").forEach((sub) => { if (a[sub.dataset.q] !== null) sub.classList.remove("is-missing"); });
+  }
+
+  const needsSharing = () => invitedEvents.some((ev) => {
+    const a = answers[ev.id];
+    return a.coming && a.plusOne && a.room;
+  });
+  const sharingChoice = () => {
+    const checked = sharing.querySelector("input:checked");
+    return checked ? checked.value : null;
+  };
+
+  function refresh() {
+    sharing.hidden = !needsSharing();
+    separateHint.hidden = sharingChoice() !== "separate";
+    if (sharingChoice()) sharing.classList.remove("is-missing");
+    updateWhatsApp();
+  }
+
+  function join(a) {
+    a.coming = true;
+    if (a.plusOne === null) a.plusOne = last.plusOne;
+    if (a.room === null) a.room = last.room;
+  }
+
+  rows.addEventListener("change", (e) => {
+    const input = e.target;
+    const q = input.dataset.q;
+    if (!q) return;
+    const id = input.closest(".rsvp-event").dataset.id;
+    const a = answers[id];
+    const yes = input.value === "yes";
+    if (q === "coming") {
+      if (yes) join(a); else a.coming = false;
+    } else {
+      a[q] = yes;
+      last[q] = yes;
+    }
+    renderRow(id);
+    errorEl.textContent = "";
+    refresh();
+  });
+
+  sharing.addEventListener("change", () => { errorEl.textContent = ""; refresh(); });
+
+  $("quick").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-all]");
+    if (!btn) return;
+    invitedEvents.forEach((ev) => {
+      const a = answers[ev.id];
+      if (btn.dataset.all === "yes") join(a); else a.coming = false;
+      renderRow(ev.id);
+    });
+    errorEl.textContent = "";
+    refresh();
+  });
+
+  function summary(a) {
+    if (a.coming === null) return "not answered yet";
+    if (!a.coming) return "can't join";
+    const who = a.plusOne === null ? "coming" : a.plusOne ? "coming with a +1" : "coming alone";
+    const room = a.room === null ? "" : a.room ? ", needs a room" : ", no room needed";
+    return who + room;
+  }
+
+  function replyText() {
+    const lines = [`RSVP for ${CONFIG.couple}'s wedding`, `Name: ${nameInput.value.trim() || "-"}`];
+    invitedEvents.forEach((ev) => lines.push(`${ev.name}: ${summary(answers[ev.id])}`));
+    if (needsSharing()) {
+      const choice = sharingChoice();
+      lines.push(`Room sharing: ${choice === "share" ? "happy to share with friends" : choice === "separate" ? "would like a separate room" : "not answered yet"}`);
+    }
+    const note = noteInput.value.trim();
+    if (note) lines.push(`Note: ${note}`);
+    return lines.join("\n");
+  }
+
+  function updateWhatsApp() {
+    const base = CONFIG.whatsappNumber ? `https://wa.me/${CONFIG.whatsappNumber}` : "https://wa.me/";
+    waLink.href = `${base}?text=${encodeURIComponent(replyText())}`;
+  }
+
+  form.addEventListener("input", updateWhatsApp);
+
+  function fail(message, focusEl) {
+    errorEl.textContent = message;
+    if (focusEl) focusEl.focus();
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = nameInput.value.trim();
+    if (!name) return fail("Add your name so we know who's replying.", nameInput);
+
+    const unanswered = invitedEvents.filter((ev) => answers[ev.id].coming === null);
+    if (unanswered.length) {
+      unanswered.forEach((ev) => rowFor(ev.id).classList.add("is-missing"));
+      return fail(unanswered.length === 1
+        ? `Choose Joining or Can't join for the ${unanswered[0].name}.`
+        : "Choose Joining or Can't join for each event.",
+        rowFor(unanswered[0].id).querySelector('input[data-q="coming"]'));
+    }
+
+    const incomplete = invitedEvents.filter((ev) => {
+      const a = answers[ev.id];
+      return a.coming && (a.plusOne === null || a.room === null);
+    });
+    if (incomplete.length) {
+      incomplete.forEach((ev) => {
+        rowFor(ev.id).querySelectorAll(".sub").forEach((sub) => {
+          if (answers[ev.id][sub.dataset.q] === null) sub.classList.add("is-missing");
+        });
+      });
+      const ev = incomplete[0];
+      const a = answers[ev.id];
+      return fail(a.plusOne === null && a.room === null
+        ? `Tell us about a +1 and a room for the ${ev.name}.`
+        : a.plusOne === null
+          ? `Tell us if you're bringing a +1 to the ${ev.name}.`
+          : `Tell us if you need a room the night of the ${ev.name}.`,
+        rowFor(ev.id).querySelector(".sub.is-missing input"));
+    }
+
+    if (needsSharing() && !sharingChoice()) {
+      sharing.classList.add("is-missing");
+      return fail("Let us know if you're both okay sharing a room with friends.", $("shareYes"));
+    }
+    errorEl.textContent = "";
+
+    // In the Sheet, each event gets Coming, +1 and Room columns.
+    // An event's headcount is its Coming total plus its +1 total; a night's rooms come from its Room column.
+    const reply = {
+      name,
+      events: Object.fromEntries(invitedEvents.map((ev) => {
+        const a = answers[ev.id];
+        return [ev.id, { coming: a.coming, plusOne: a.coming && a.plusOne, room: a.coming && a.room }];
+      })),
+      sharing: needsSharing() ? sharingChoice() : null, // "share" or "separate"
+      note: noteInput.value.trim(),
+      sentAt: new Date().toISOString()
+    };
+    // Real build: send `reply` to your Google Apps Script web app or Google Form here.
+
+    const joining = invitedEvents.filter((ev) => reply.events[ev.id].coming);
+    $("thanksTitle").textContent = joining.length ? `Thank you, ${name}.` : `Thank you for letting us know, ${name}.`;
+    $("thanksBody").textContent = joining.length
+      ? "RSVP sent. Here's what we have:"
+      : "RSVP sent. We'll miss you, and we'll share the photos after.";
+    const list = $("thanksList");
+    list.replaceChildren();
+    const addRow = (label, value) => {
+      const item = el("li");
+      item.append(el("span", "", label), el("span", "val", value));
+      list.append(item);
+    };
+    invitedEvents.forEach((ev) => {
+      const r = reply.events[ev.id];
+      addRow(ev.name, !r.coming ? "Can't join" : `${r.plusOne ? "You and your +1" : "Just you"}${r.room ? ", room needed" : ""}`);
+    });
+    if (reply.sharing) addRow("Room", reply.sharing === "share" ? "Sharing with friends" : "A separate room for you two");
+    list.hidden = !joining.length;
+    form.hidden = true;
+    thanks.hidden = false;
+    thanks.focus();
+  });
+
+  $("editReply").addEventListener("click", () => {
+    thanks.hidden = true;
+    form.hidden = false;
+    nameInput.focus();
+  });
+
+  /* ---------- Maps and calendar links ---------- */
+  const mapUrl = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+  document.querySelectorAll("[data-map]").forEach((a) => {
+    a.href = mapUrl(a.dataset.map);
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  const cal = new URL("https://calendar.google.com/calendar/render");
+  cal.searchParams.set("action", "TEMPLATE");
+  cal.searchParams.set("text", `${CONFIG.couple}'s wedding`);
+  cal.searchParams.set("dates", `${CONFIG.calendar.start}/${CONFIG.calendar.end}`);
+  cal.searchParams.set("location", CONFIG.venue);
+  cal.searchParams.set("details", CONFIG.calendar.details);
+  $("calLink").href = cal.toString();
+
+  refresh();
+})();
+</script>
+</body>
+</html>
