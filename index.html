@@ -1000,7 +1000,7 @@
   skipBtn.addEventListener("click", reveal);
   $("replay").addEventListener("click", replay);
 
-  // /* ---------- RSVP ---------- */
+  /* ---------- RSVP ---------- */
   // const form = $("rsvpForm");
   // const nameInput = $("guestName");
   // const noteInput = $("note");
@@ -1023,236 +1023,236 @@
   // $("eventsHeading").textContent = invitedEvents.length === 1 ? "Can you make it?" : "Which events can you join?";
 
   // // answers[id] = { coming, plusOne, room }, each true, false or null (not answered yet)
-  const answers = {};
-  // +1 and room answers carry over to the next event a guest joins, so they only change what differs.
-  const last = { plusOne: null, room: null };
+  // const answers = {};
+  // // +1 and room answers carry over to the next event a guest joins, so they only change what differs.
+  // const last = { plusOne: null, room: null };
 
-  function el(tag, className, text) {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text !== undefined) node.textContent = text;
-    return node;
-  }
+  // function el(tag, className, text) {
+  //   const node = document.createElement(tag);
+  //   if (className) node.className = className;
+  //   if (text !== undefined) node.textContent = text;
+  //   return node;
+  // }
 
-  function pills(name, q, options) {
-    const wrap = el("div", "rsvp-toggle");
-    options.forEach(([value, text]) => {
-      const label = el("label", "pill");
-      const input = el("input");
-      input.type = "radio";
-      input.name = name;
-      input.id = `${name}-${value}`;
-      input.value = value;
-      input.dataset.q = q;
-      label.append(input, el("span", "", text));
-      wrap.append(label);
-    });
-    return wrap;
-  }
+  // function pills(name, q, options) {
+  //   const wrap = el("div", "rsvp-toggle");
+  //   options.forEach(([value, text]) => {
+  //     const label = el("label", "pill");
+  //     const input = el("input");
+  //     input.type = "radio";
+  //     input.name = name;
+  //     input.id = `${name}-${value}`;
+  //     input.value = value;
+  //     input.dataset.q = q;
+  //     label.append(input, el("span", "", text));
+  //     wrap.append(label);
+  //   });
+  //   return wrap;
+  // }
 
-  function question(id, q, text) {
-    const fs = el("fieldset", "sub");
-    fs.dataset.q = q;
-    fs.append(el("legend", "", text), pills(`${q}-${id}`, q, [["yes", "Yes"], ["no", "No"]]));
-    return fs;
-  }
+  // function question(id, q, text) {
+  //   const fs = el("fieldset", "sub");
+  //   fs.dataset.q = q;
+  //   fs.append(el("legend", "", text), pills(`${q}-${id}`, q, [["yes", "Yes"], ["no", "No"]]));
+  //   return fs;
+  // }
 
-  function buildRow(ev) {
-    const fs = el("fieldset", "rsvp-event");
-    fs.dataset.id = ev.id;
-    const legend = el("legend");
-    legend.append(el("span", "rsvp-event-name", ev.name), el("span", "rsvp-event-when", ev.when));
-    const more = el("div", "followups");
-    more.hidden = true;
-    more.append(question(ev.id, "plusOne", "Bringing a +1?"), question(ev.id, "room", "Need a room that night?"));
-    fs.append(legend, pills(`coming-${ev.id}`, "coming", [["yes", "Joining"], ["no", "Can't join"]]), more);
-    answers[ev.id] = { coming: null, plusOne: null, room: null };
-    return fs;
-  }
+  // function buildRow(ev) {
+  //   const fs = el("fieldset", "rsvp-event");
+  //   fs.dataset.id = ev.id;
+  //   const legend = el("legend");
+  //   legend.append(el("span", "rsvp-event-name", ev.name), el("span", "rsvp-event-when", ev.when));
+  //   const more = el("div", "followups");
+  //   more.hidden = true;
+  //   more.append(question(ev.id, "plusOne", "Bringing a +1?"), question(ev.id, "room", "Need a room that night?"));
+  //   fs.append(legend, pills(`coming-${ev.id}`, "coming", [["yes", "Joining"], ["no", "Can't join"]]), more);
+  //   answers[ev.id] = { coming: null, plusOne: null, room: null };
+  //   return fs;
+  // }
 
-  invitedEvents.forEach((ev) => rows.append(buildRow(ev)));
-  const rowFor = (id) => rows.querySelector(`[data-id="${id}"]`);
+  // invitedEvents.forEach((ev) => rows.append(buildRow(ev)));
+  // const rowFor = (id) => rows.querySelector(`[data-id="${id}"]`);
 
-  function renderRow(id) {
-    const fs = rowFor(id);
-    const a = answers[id];
-    fs.querySelectorAll("input[data-q]").forEach((input) => {
-      const value = a[input.dataset.q];
-      input.checked = value !== null && input.value === (value ? "yes" : "no");
-    });
-    fs.querySelector(".followups").hidden = a.coming !== true;
-    if (a.coming !== null) fs.classList.remove("is-missing");
-    fs.querySelectorAll(".sub").forEach((sub) => { if (a[sub.dataset.q] !== null) sub.classList.remove("is-missing"); });
-  }
+  // function renderRow(id) {
+  //   const fs = rowFor(id);
+  //   const a = answers[id];
+  //   fs.querySelectorAll("input[data-q]").forEach((input) => {
+  //     const value = a[input.dataset.q];
+  //     input.checked = value !== null && input.value === (value ? "yes" : "no");
+  //   });
+  //   fs.querySelector(".followups").hidden = a.coming !== true;
+  //   if (a.coming !== null) fs.classList.remove("is-missing");
+  //   fs.querySelectorAll(".sub").forEach((sub) => { if (a[sub.dataset.q] !== null) sub.classList.remove("is-missing"); });
+  // }
 
-  const needsSharing = () => invitedEvents.some((ev) => {
-    const a = answers[ev.id];
-    return a.coming && a.plusOne && a.room;
-  });
-  const sharingChoice = () => {
-    const checked = sharing.querySelector("input:checked");
-    return checked ? checked.value : null;
-  };
+  // const needsSharing = () => invitedEvents.some((ev) => {
+  //   const a = answers[ev.id];
+  //   return a.coming && a.plusOne && a.room;
+  // });
+  // const sharingChoice = () => {
+  //   const checked = sharing.querySelector("input:checked");
+  //   return checked ? checked.value : null;
+  // };
 
-  function refresh() {
-    sharing.hidden = !needsSharing();
-    separateHint.hidden = sharingChoice() !== "separate";
-    if (sharingChoice()) sharing.classList.remove("is-missing");
-    updateWhatsApp();
-  }
+  // function refresh() {
+  //   sharing.hidden = !needsSharing();
+  //   separateHint.hidden = sharingChoice() !== "separate";
+  //   if (sharingChoice()) sharing.classList.remove("is-missing");
+  //   updateWhatsApp();
+  // }
 
-  function join(a) {
-    a.coming = true;
-    if (a.plusOne === null) a.plusOne = last.plusOne;
-    if (a.room === null) a.room = last.room;
-  }
+  // function join(a) {
+  //   a.coming = true;
+  //   if (a.plusOne === null) a.plusOne = last.plusOne;
+  //   if (a.room === null) a.room = last.room;
+  // }
 
-  rows.addEventListener("change", (e) => {
-    const input = e.target;
-    const q = input.dataset.q;
-    if (!q) return;
-    const id = input.closest(".rsvp-event").dataset.id;
-    const a = answers[id];
-    const yes = input.value === "yes";
-    if (q === "coming") {
-      if (yes) join(a); else a.coming = false;
-    } else {
-      a[q] = yes;
-      last[q] = yes;
-    }
-    renderRow(id);
-    errorEl.textContent = "";
-    refresh();
-  });
+  // rows.addEventListener("change", (e) => {
+  //   const input = e.target;
+  //   const q = input.dataset.q;
+  //   if (!q) return;
+  //   const id = input.closest(".rsvp-event").dataset.id;
+  //   const a = answers[id];
+  //   const yes = input.value === "yes";
+  //   if (q === "coming") {
+  //     if (yes) join(a); else a.coming = false;
+  //   } else {
+  //     a[q] = yes;
+  //     last[q] = yes;
+  //   }
+  //   renderRow(id);
+  //   errorEl.textContent = "";
+  //   refresh();
+  // });
 
-  sharing.addEventListener("change", () => { errorEl.textContent = ""; refresh(); });
+  // sharing.addEventListener("change", () => { errorEl.textContent = ""; refresh(); });
 
-  $("quick").addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-all]");
-    if (!btn) return;
-    invitedEvents.forEach((ev) => {
-      const a = answers[ev.id];
-      if (btn.dataset.all === "yes") join(a); else a.coming = false;
-      renderRow(ev.id);
-    });
-    errorEl.textContent = "";
-    refresh();
-  });
+  // $("quick").addEventListener("click", (e) => {
+  //   const btn = e.target.closest("button[data-all]");
+  //   if (!btn) return;
+  //   invitedEvents.forEach((ev) => {
+  //     const a = answers[ev.id];
+  //     if (btn.dataset.all === "yes") join(a); else a.coming = false;
+  //     renderRow(ev.id);
+  //   });
+  //   errorEl.textContent = "";
+  //   refresh();
+  // });
 
-  function summary(a) {
-    if (a.coming === null) return "not answered yet";
-    if (!a.coming) return "can't join";
-    const who = a.plusOne === null ? "coming" : a.plusOne ? "coming with a +1" : "coming alone";
-    const room = a.room === null ? "" : a.room ? ", needs a room" : ", no room needed";
-    return who + room;
-  }
+  // function summary(a) {
+  //   if (a.coming === null) return "not answered yet";
+  //   if (!a.coming) return "can't join";
+  //   const who = a.plusOne === null ? "coming" : a.plusOne ? "coming with a +1" : "coming alone";
+  //   const room = a.room === null ? "" : a.room ? ", needs a room" : ", no room needed";
+  //   return who + room;
+  // }
 
-  function replyText() {
-    const lines = [`RSVP for ${CONFIG.couple}'s wedding`, `Name: ${nameInput.value.trim() || "-"}`];
-    invitedEvents.forEach((ev) => lines.push(`${ev.name}: ${summary(answers[ev.id])}`));
-    if (needsSharing()) {
-      const choice = sharingChoice();
-      lines.push(`Room sharing: ${choice === "share" ? "happy to share with friends" : choice === "separate" ? "would like a separate room" : "not answered yet"}`);
-    }
-    const note = noteInput.value.trim();
-    if (note) lines.push(`Note: ${note}`);
-    return lines.join("\n");
-  }
+  // function replyText() {
+  //   const lines = [`RSVP for ${CONFIG.couple}'s wedding`, `Name: ${nameInput.value.trim() || "-"}`];
+  //   invitedEvents.forEach((ev) => lines.push(`${ev.name}: ${summary(answers[ev.id])}`));
+  //   if (needsSharing()) {
+  //     const choice = sharingChoice();
+  //     lines.push(`Room sharing: ${choice === "share" ? "happy to share with friends" : choice === "separate" ? "would like a separate room" : "not answered yet"}`);
+  //   }
+  //   const note = noteInput.value.trim();
+  //   if (note) lines.push(`Note: ${note}`);
+  //   return lines.join("\n");
+  // }
 
-  function updateWhatsApp() {
-    const base = CONFIG.whatsappNumber ? `https://wa.me/${CONFIG.whatsappNumber}` : "https://wa.me/";
-    waLink.href = `${base}?text=${encodeURIComponent(replyText())}`;
-  }
+  // function updateWhatsApp() {
+  //   const base = CONFIG.whatsappNumber ? `https://wa.me/${CONFIG.whatsappNumber}` : "https://wa.me/";
+  //   waLink.href = `${base}?text=${encodeURIComponent(replyText())}`;
+  // }
 
-  form.addEventListener("input", updateWhatsApp);
+  // form.addEventListener("input", updateWhatsApp);
 
-  function fail(message, focusEl) {
-    errorEl.textContent = message;
-    if (focusEl) focusEl.focus();
-  }
+  // function fail(message, focusEl) {
+  //   errorEl.textContent = message;
+  //   if (focusEl) focusEl.focus();
+  // }
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = nameInput.value.trim();
-    if (!name) return fail("Add your name so we know who's replying.", nameInput);
+  // form.addEventListener("submit", (e) => {
+  //   e.preventDefault();
+  //   const name = nameInput.value.trim();
+  //   if (!name) return fail("Add your name so we know who's replying.", nameInput);
 
-    const unanswered = invitedEvents.filter((ev) => answers[ev.id].coming === null);
-    if (unanswered.length) {
-      unanswered.forEach((ev) => rowFor(ev.id).classList.add("is-missing"));
-      return fail(unanswered.length === 1
-        ? `Choose Joining or Can't join for the ${unanswered[0].name}.`
-        : "Choose Joining or Can't join for each event.",
-        rowFor(unanswered[0].id).querySelector('input[data-q="coming"]'));
-    }
+  //   const unanswered = invitedEvents.filter((ev) => answers[ev.id].coming === null);
+  //   if (unanswered.length) {
+  //     unanswered.forEach((ev) => rowFor(ev.id).classList.add("is-missing"));
+  //     return fail(unanswered.length === 1
+  //       ? `Choose Joining or Can't join for the ${unanswered[0].name}.`
+  //       : "Choose Joining or Can't join for each event.",
+  //       rowFor(unanswered[0].id).querySelector('input[data-q="coming"]'));
+  //   }
 
-    const incomplete = invitedEvents.filter((ev) => {
-      const a = answers[ev.id];
-      return a.coming && (a.plusOne === null || a.room === null);
-    });
-    if (incomplete.length) {
-      incomplete.forEach((ev) => {
-        rowFor(ev.id).querySelectorAll(".sub").forEach((sub) => {
-          if (answers[ev.id][sub.dataset.q] === null) sub.classList.add("is-missing");
-        });
-      });
-      const ev = incomplete[0];
-      const a = answers[ev.id];
-      return fail(a.plusOne === null && a.room === null
-        ? `Tell us about a +1 and a room for the ${ev.name}.`
-        : a.plusOne === null
-          ? `Tell us if you're bringing a +1 to the ${ev.name}.`
-          : `Tell us if you need a room the night of the ${ev.name}.`,
-        rowFor(ev.id).querySelector(".sub.is-missing input"));
-    }
+  //   const incomplete = invitedEvents.filter((ev) => {
+  //     const a = answers[ev.id];
+  //     return a.coming && (a.plusOne === null || a.room === null);
+  //   });
+  //   if (incomplete.length) {
+  //     incomplete.forEach((ev) => {
+  //       rowFor(ev.id).querySelectorAll(".sub").forEach((sub) => {
+  //         if (answers[ev.id][sub.dataset.q] === null) sub.classList.add("is-missing");
+  //       });
+  //     });
+  //     const ev = incomplete[0];
+  //     const a = answers[ev.id];
+  //     return fail(a.plusOne === null && a.room === null
+  //       ? `Tell us about a +1 and a room for the ${ev.name}.`
+  //       : a.plusOne === null
+  //         ? `Tell us if you're bringing a +1 to the ${ev.name}.`
+  //         : `Tell us if you need a room the night of the ${ev.name}.`,
+  //       rowFor(ev.id).querySelector(".sub.is-missing input"));
+  //   }
 
-    if (needsSharing() && !sharingChoice()) {
-      sharing.classList.add("is-missing");
-      return fail("Let us know if you're both okay sharing a room with friends.", $("shareYes"));
-    }
-    errorEl.textContent = "";
+  //   if (needsSharing() && !sharingChoice()) {
+  //     sharing.classList.add("is-missing");
+  //     return fail("Let us know if you're both okay sharing a room with friends.", $("shareYes"));
+  //   }
+  //   errorEl.textContent = "";
 
-    // In the Sheet, each event gets Coming, +1 and Room columns.
-    // An event's headcount is its Coming total plus its +1 total; a night's rooms come from its Room column.
-    const reply = {
-      name,
-      events: Object.fromEntries(invitedEvents.map((ev) => {
-        const a = answers[ev.id];
-        return [ev.id, { coming: a.coming, plusOne: a.coming && a.plusOne, room: a.coming && a.room }];
-      })),
-      sharing: needsSharing() ? sharingChoice() : null, // "share" or "separate"
-      note: noteInput.value.trim(),
-      sentAt: new Date().toISOString()
-    };
-    // Real build: send `reply` to your Google Apps Script web app or Google Form here.
+  //   // In the Sheet, each event gets Coming, +1 and Room columns.
+  //   // An event's headcount is its Coming total plus its +1 total; a night's rooms come from its Room column.
+  //   const reply = {
+  //     name,
+  //     events: Object.fromEntries(invitedEvents.map((ev) => {
+  //       const a = answers[ev.id];
+  //       return [ev.id, { coming: a.coming, plusOne: a.coming && a.plusOne, room: a.coming && a.room }];
+  //     })),
+  //     sharing: needsSharing() ? sharingChoice() : null, // "share" or "separate"
+  //     note: noteInput.value.trim(),
+  //     sentAt: new Date().toISOString()
+  //   };
+  //   // Real build: send `reply` to your Google Apps Script web app or Google Form here.
 
-    const joining = invitedEvents.filter((ev) => reply.events[ev.id].coming);
-    $("thanksTitle").textContent = joining.length ? `Thank you, ${name}.` : `Thank you for letting us know, ${name}.`;
-    $("thanksBody").textContent = joining.length
-      ? "RSVP sent. Here's what we have:"
-      : "RSVP sent. We'll miss you, and we'll share the photos after.";
-    const list = $("thanksList");
-    list.replaceChildren();
-    const addRow = (label, value) => {
-      const item = el("li");
-      item.append(el("span", "", label), el("span", "val", value));
-      list.append(item);
-    };
-    invitedEvents.forEach((ev) => {
-      const r = reply.events[ev.id];
-      addRow(ev.name, !r.coming ? "Can't join" : `${r.plusOne ? "You and your +1" : "Just you"}${r.room ? ", room needed" : ""}`);
-    });
-    if (reply.sharing) addRow("Room", reply.sharing === "share" ? "Sharing with friends" : "A separate room for you two");
-    list.hidden = !joining.length;
-    form.hidden = true;
-    thanks.hidden = false;
-    thanks.focus();
-  });
+  //   const joining = invitedEvents.filter((ev) => reply.events[ev.id].coming);
+  //   $("thanksTitle").textContent = joining.length ? `Thank you, ${name}.` : `Thank you for letting us know, ${name}.`;
+  //   $("thanksBody").textContent = joining.length
+  //     ? "RSVP sent. Here's what we have:"
+  //     : "RSVP sent. We'll miss you, and we'll share the photos after.";
+  //   const list = $("thanksList");
+  //   list.replaceChildren();
+  //   const addRow = (label, value) => {
+  //     const item = el("li");
+  //     item.append(el("span", "", label), el("span", "val", value));
+  //     list.append(item);
+  //   };
+  //   invitedEvents.forEach((ev) => {
+  //     const r = reply.events[ev.id];
+  //     addRow(ev.name, !r.coming ? "Can't join" : `${r.plusOne ? "You and your +1" : "Just you"}${r.room ? ", room needed" : ""}`);
+  //   });
+  //   if (reply.sharing) addRow("Room", reply.sharing === "share" ? "Sharing with friends" : "A separate room for you two");
+  //   list.hidden = !joining.length;
+  //   form.hidden = true;
+  //   thanks.hidden = false;
+  //   thanks.focus();
+  // });
 
-  $("editReply").addEventListener("click", () => {
-    thanks.hidden = true;
-    form.hidden = false;
-    nameInput.focus();
-  });
+  // $("editReply").addEventListener("click", () => {
+  //   thanks.hidden = true;
+  //   form.hidden = false;
+  //   nameInput.focus();
+  // });
 
   /* ---------- Maps and calendar links ---------- */
   const mapUrl = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
@@ -1270,7 +1270,7 @@
   cal.searchParams.set("details", CONFIG.calendar.details);
   $("calLink").href = cal.toString();
 
-  refresh();
+  // refresh();
 })();
 </script>
 </body>
