@@ -483,6 +483,15 @@
   .thanks-list .val { color: var(--muted); text-align: right; }
 
   /* Getting there */
+  .map-wrap{
+    width: 100%;
+    aspect-ration: 16/9;
+    min-height: 280px;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
   .venue-name { margin: 0; font-family: var(--serif); font-size: 1.6rem; line-height: 1.2; }
   .venue-address { margin: .25rem 0 0; }
   .facts { margin: 2.25rem 0 0; display: grid; grid-template-columns: max-content 1fr; gap: 1.25rem 0; }
@@ -705,13 +714,14 @@
 
   <section class="block" aria-labelledby="travel-title">
     <h2 id="travel-title">Getting there</h2>
-    <p class="venue-name">The Palm Courtyard</p>
-    <p class="venue-address">Assagao, North Goa</p>
-    <a class="btn-outline" data-map="The Palm Courtyard, Tamil Nadu" href="https://www.google.com/maps">Open in Google Maps</a>
+    <p class="venue-name">Our Lady of Annunciation Church</p>
+    <p class="venue-address">Nagercoil, Tamil Nadu</p>
+    <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2012619.674336357!2d76.86909411927884!3d9.858940966761308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04fa541dc23379%3A0x992d0043c6c46980!2sOur%20Lady%20of%20Annunciation%20Church%2C%20Kattuvilai!5e0!3m2!1sen!2sin!4v1792521933798!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <a class="btn-outline" data-map="Nagercoil, Tamil Nadu" href="https://www.google.com/maps">Open in Google Maps</a>
     <dl class="facts">
       <div><dt>Flying in (26-28)</dt><dd>Thiruvananthapuram (TRV) and  Tuticorin (TCR) are the closes Airports.Madurai (IXM) and Tiruchirappalli (TRZ) are further away, will need another train journey.</dd></div>
       <div><dt>By train</dt><dd>Nagercoil Railway Station is 10 mins away.</dd></div>
-      <div><dt>Flying out (29-30)</dt><dd>Madurai (IXM) is the closest</dd></div>
+      <div><dt>Flying out (29-30)</dt><dd>Madurai (IXM) is the closest Airport.</dd></div>
       <div><dt>By train</dt><dd>Virudhunagar Railway Station is 10 mins away.</dd></div>
     </dl>
   </section>
