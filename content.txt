@@ -1,0 +1,194 @@
+# ---------------------------------------------------------------
+# Wedding invite text
+#
+# Edit anything after the colon, then save and upload or push.
+#
+# Rules
+# - Lines starting with # are notes and are not shown on the page.
+# - Keep the [section] names exactly as they are.
+# - [event], [dress], [travel], [place] and [contact] can repeat.
+#   Copy a whole block to add an item. Delete a block to remove one.
+# - Use | to start a new line inside a value.
+# - Start a value with * to show it in muted italics, e.g. *Time to follow
+# - Leave a value empty to hide it (for example preview_note).
+# ---------------------------------------------------------------
+
+[couple]
+first: Santhosh
+second: Theodosia
+# Letters shown on the wax seal and in the footer.
+initials: S&T
+lead: Together with their families
+invite: invite you to celebrate their wedding
+dates: 26–29 December 2026
+location: Assagao, Goa
+envelope_date: 26–29 December 2026, Goa
+# Name used in the personal link preview when there is no ?to= in the address.
+demo_guest: Aditya
+# Digits only, with country code, e.g. 919876543210. Leave empty to let guests choose.
+whatsapp_number:
+
+[venue]
+name: The Palm Courtyard
+address: Assagao, North Goa
+map_query: The Palm Courtyard, Assagao, Goa
+
+[calendar]
+# Dates for Google Calendar, as YYYYMMDD. The end is the day after the last event.
+start: 20261226
+end: 20261230
+details: Sangeet on the 26th, dinner on the 27th, wedding on the 28th and reception on the 29th.
+
+[event]
+id: sangeet
+name: Sangeet
+day: 26
+weekday: Saturday
+details: Evening | Poolside, The Palm Courtyard
+when: Saturday 26 December, evening
+
+[event]
+id: dinner
+name: Dinner
+day: 27
+weekday: Sunday
+details: Evening | The terrace, The Palm Courtyard
+when: Sunday 27 December, evening
+
+[event]
+id: wedding
+name: Wedding
+day: 28
+weekday: Monday
+details: *Time to follow | The garden, The Palm Courtyard
+when: Monday 28 December
+
+[event]
+id: reception
+name: Reception
+day: 29
+weekday: Tuesday
+details: *Time to follow | The lawns, The Palm Courtyard
+when: Tuesday 29 December
+
+[dress]
+# swatch must be one of: sangeet, wedding, reception
+title: Sangeet
+when: Saturday 26 December
+swatch: sangeet
+rows: Everyone: Dark and flashy
+
+[dress]
+title: Wedding
+when: Monday 28 December
+swatch: wedding
+rows: Men: Black suit | Women: *Details to follow
+
+[dress]
+title: Reception
+when: Tuesday 29 December
+swatch: reception
+rows: Everyone: Ethnic wear
+
+[travel]
+label: Flying in
+text: Mopa airport (GOX) is about 45 minutes away by road, Dabolim (GOI) about 75.
+
+[travel]
+label: By train
+text: Thivim station is about 25 minutes away.
+
+[travel]
+label: Airport cabs
+text: We're running shuttles from both airports on 26 December. Add your flight times to your RSVP note.
+
+[travel]
+label: Where to stay
+text: Tell us in your RSVP which nights you need a room, and we'll arrange it at the resort.
+
+[place]
+name: Chapora Fort
+text: Climb up at sunset for the view over the river mouth. 15 minutes away.
+map: Chapora Fort, Goa
+
+[place]
+name: Fontainhas
+text: Panjim's old Latin quarter, all colourful houses and quiet lanes. 40 minutes away.
+map: Fontainhas, Panjim, Goa
+
+[place]
+name: Anjuna flea market
+text: Wednesdays only. Go early and bargain hard. 15 minutes away.
+map: Anjuna Flea Market, Goa
+
+[contact]
+name: Rohan
+role: For travel, rooms and cabs
+phone: +91 90000 00001
+
+[contact]
+name: Meera
+role: For anything on the day
+phone: +91 90000 00002
+
+[text]
+# Page labels and buttons
+open_hint: Tap the seal to open
+skip_button: Skip to the details
+replay_button: Open the envelope again
+envelope_default: For you
+for_prefix: For
+celebrations_title: The celebrations
+dress_link: See the dress code
+dress_title: Dress code
+travel_title: Getting there
+venue_open_map: Open in Google Maps
+places_title: While you're in Goa
+places_lede: A few of our favourite things nearby, if you're staying on.
+show_on_map: Show on map
+contacts_title: Questions?
+contacts_lede: Call or message either of them. They know everything we know.
+call_button: Call
+whatsapp_link: WhatsApp
+calendar_link: Add the dates to Google Calendar
+
+# RSVP form
+rsvp_title: Will you join us?
+rsvp_intro: Please reply by 15 November so we can plan food, rooms and cabs.
+rsvp_name_label: Your name
+rsvp_name_placeholder: Full name
+events_heading: Which events can you join?
+single_event_heading: Can you make it?
+all_events_button: We'll be at all of them
+no_events_button: We can't make any
+joining_label: Joining
+not_joining_label: Can't join
+plus_one_question: Bringing a +1?
+room_question: Need a room that night?
+yes_label: Yes
+no_label: No
+sharing_title: Sharing a room
+sharing_text: At the resort, friends share rooms, with boys in one room and girls in another. Since you're bringing a +1, are you both okay with that?
+sharing_yes: Yes, we're happy to share
+sharing_no: No, we'd like our own room
+sharing_separate_note: No problem. We'll book a separate room for the two of you.
+note_label: Anything we should know?
+note_placeholder: Food preferences, flight times, or a note for the two of us
+send_button: Send RSVP
+whatsapp_button: Reply on WhatsApp instead
+change_reply_button: Change my reply
+# Shown under the thank-you message. Leave empty once replies are going to your Sheet.
+preview_note: This is a preview, so replies aren't saved yet.
+
+# Messages. {name} and {event} are filled in by the page.
+thanks_title_yes: Thank you, {name}.
+thanks_title_no: Thank you for letting us know, {name}.
+thanks_body_yes: RSVP sent. Here's what we have:
+thanks_body_no: RSVP sent. We'll miss you, and we'll share the photos after.
+error_name: Add your name so we know who's replying.
+error_answer_one: Choose Joining or Can't join for the {event}.
+error_answer_all: Choose Joining or Can't join for each event.
+error_followup_both: Tell us about a +1 and a room for the {event}.
+error_followup_plus: Tell us if you're bringing a +1 to the {event}.
+error_followup_room: Tell us if you need a room the night of the {event}.
+error_sharing: Let us know if you're both okay sharing a room with friends.
