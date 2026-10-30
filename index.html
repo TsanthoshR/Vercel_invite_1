@@ -809,6 +809,7 @@
         <div class="event-body">
           <h3>Sangeet</h3>
           <p>Evening</p>
+          <p class="venue-row"><a class="map-btn" href="https://maps.app.goo.gl/37q5Tp8mCdTHrW2LA?g_st=iw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open location</span></a></p>
         </div>
       </li>
       <li class="event" data-event="dinner">
@@ -816,13 +817,15 @@
         <div class="event-body">
           <h3>Dinner</h3>
           <p>Evening</p>
+          <p class="venue-row"><span class="venue-label">Sessiah Bhavan, Kattuvilai</span><a class="map-btn" href="https://maps.app.goo.gl/Akqr6TAQZytYHPKC9" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a></p>
         </div>
       </li>
       <li class="event" data-event="wedding">
         <p class="event-date"><span class="day">28</span><span class="weekday">Monday</span></p>
         <div class="event-body">
           <h3>Wedding</h3>
-          <p><span class="pending">Time to follow</span><br>Reception straight after, location to follow</p>
+          <p><span class="pending">Time to follow</span><br>Reception straight after</p>
+          <p class="venue-row"><a class="map-btn" href="https://maps.app.goo.gl/v1c6CdgpNPeCHyeB7?g_st=iw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Reception location</span></a></p>
           <p class="venue-row"><span class="venue-label">Our Lady of Annunciation Church</span><a class="map-btn" href="https://maps.app.goo.gl/wa9dnhxw2aCehfdC8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a></p>
         </div>
       </li>
@@ -1006,9 +1009,10 @@
     // Calendar entries. allDay: [start, end-exclusive] as YYYYMMDD.
     // Timed entries use UTC: 6:30 pm IST = 13:00 UTC, 9:30 pm IST = 16:00 UTC.
     calendarEvents: [
-      { title: "Sangeet", allDay: ["20261226", "20261227"], location: "", details: "Sangeet. Dark and flashy." },
-      { title: "Dinner", allDay: ["20261227", "20261228"], location: "", details: "Dinner. Time to follow." },
-      { title: "Wedding", allDay: ["20261228", "20261229"], location: "Our Lady of Annunciation Church, Kattuvilai", details: "Time to follow. Reception straight after, location to follow. Men: black suit. Women: details to follow." },
+      { title: "Sangeet", allDay: ["20261226", "20261227"], location: "https://maps.app.goo.gl/37q5Tp8mCdTHrW2LA?g_st=iw", details: "Sangeet. Dark and flashy." },
+      { title: "Dinner", allDay: ["20261227", "20261228"], location: "Sessiah Bhavan, Kattuvilai", details: "Dinner. Time to follow." },
+      { title: "Wedding", allDay: ["20261228", "20261229"], location: "Our Lady of Annunciation Church, Kattuvilai", details: "Time to follow. Reception straight after. Men: black suit. Women: details to follow." },
+      { title: "Wedding reception", allDay: ["20261228", "20261229"], location: "https://maps.app.goo.gl/v1c6CdgpNPeCHyeB7?g_st=iw", details: "Straight after the wedding." },
       { title: "Reception", allDay: ["20261229", "20261230"], location: "Raja Rathinam Mahal", details: "Time to follow. Ethnic wear." },
       { title: "Mumbai Reception", start: "20270109T130000Z", end: "20270109T160000Z", location: "Shakuntalam Hall, Anushaktinagar, Mumbai", details: "Evening, 6:30 pm onwards." }
     ]
