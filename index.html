@@ -712,6 +712,22 @@
   line-height: 1.45;
 }
   
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .9rem;
+    padding: .55rem 1.05rem .55rem .85rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: .95rem;
+    text-decoration: none;
+    transition: border-color .2s ease, background-color .2s ease;
+  }
+  .map-btn:hover { border-color: var(--ink); background: var(--field); }
+  .map-btn svg { width: 1.05rem; height: 1.05rem; flex: none; color: var(--marigold); }
 </style>
 </head>
 <body class="is-locked">
@@ -785,28 +801,30 @@
         <p class="event-date"><span class="day">26</span><span class="weekday">Saturday</span></p>
         <div class="event-body">
           <h3>Sangeet</h3>
-          <p>Evening<br>Poolside, The Palm Courtyard</p>
+          <p>Evening</p>
         </div>
       </li>
       <li class="event" data-event="dinner">
         <p class="event-date"><span class="day">27</span><span class="weekday">Sunday</span></p>
         <div class="event-body">
           <h3>Dinner</h3>
-          <p>Evening<br>The terrace, The Palm Courtyard</p>
+          <p>Evening</p>
         </div>
       </li>
       <li class="event" data-event="wedding">
         <p class="event-date"><span class="day">28</span><span class="weekday">Monday</span></p>
         <div class="event-body">
           <h3>Wedding</h3>
-          <p><span class="pending">Time to follow</span><br>The garden, The Palm Courtyard</p>
+          <p><span class="pending">Time to follow</span><br>Reception straight after, location to follow</p>
+          <a class="map-btn" href="https://maps.app.goo.gl/wa9dnhxw2aCehfdC8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open location</span></a>
         </div>
       </li>
       <li class="event" data-event="reception">
         <p class="event-date"><span class="day">29</span><span class="weekday">Tuesday</span></p>
         <div class="event-body">
           <h3>Reception</h3>
-          <p><span class="pending">Time to follow</span><br>The lawns, The Palm Courtyard</p>
+          <p><span class="pending">Time to follow</span></p>
+          <a class="map-btn" href="https://maps.app.goo.gl/CvbAhAstUTgi3CuE7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open location</span></a>
         </div>
       </li>
     </ol>
@@ -836,7 +854,6 @@
       
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScCeFBrjapuWRB0-ogUU9zFiR4ElBgtDkFbMBIw_iFiIo94Aw/viewform?usp=publish-editor" class="btn-primary"
           target = "_blank" rel= "noopener" style="text-decoration: none display: inline-block;" >Send RSVP</a>
-        <a class="btn-link" id="waLink" href="https://wa.me/919869922618" target="_blank" rel="noopener">Reply on WhatsApp instead</a>
     </div>
 
     <div class="thanks" id="thanks" tabindex="-1" hidden>
@@ -905,17 +922,15 @@
     
     <p class="venue-name">Our Lady of Annunciation Church</p>
     <p class="venue-address">Nagercoil, Tamil Nadu</p>
-    <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2012619.674336357!2d76.86909411927884!3d9.858940966761308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04fa541dc23379%3A0x992d0043c6c46980!2sOur%20Lady%20of%20Annunciation%20Church%2C%20Kattuvilai!5e0!3m2!1sen!2sin!4v1792521933798!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Our+Lady+of+Annunciation+Church+Nagercoil" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a>
     
     <p class="venue-name">JB Residency</p>
     <p class="venue-address">Virudhunagar, Tamil Nadu</p>
-    <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.1969629971018!2d77.95954467679684!3d9.578283590506608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b012ced4d200517%3A0x4d526a2d2e43bf81!2sSRI%20RAM%20JB%20Residency!5e0!3m2!1sen!2sin!4v1792522677192!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
+    
     
     <p class="venue-name">Shakuntalam Hall</p>
     <p class="venue-address">Anushaktinagar, Mumbai</p>
-    <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.4841964739344!2d72.91537817690246!3d19.042437482155115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c5e1e72edec7%3A0xc39d785fae3d6e2c!2sShakuntalam%20Hall%2C%20BARC%2C!5e0!3m2!1sen!2sin!4v1792522740676!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
+    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Shakuntalam+Hall+Anushaktinagar+Mumbai" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a>
 
 
           
@@ -928,27 +943,6 @@
     
   </section>
 
-  <section class="block" aria-labelledby="around-title">
-    <h2 id="around-title">While you're in Kanyakumari</h2>
-    <p class="lede">A few of our favourite things nearby, if you're staying on.</p>
-    <ul class="places">
-      <li>
-        <h3>Mathur Aqueduct</h3>
-        <p>One of the tallest and longest hanging aqueducts in Asia, carrying water above lush green coconut grooves and hill stream. ~45 mins away.</p>
-        <a data-map="Mathur Aqueduct, Tamil Nadu" href="https://maps.app.goo.gl/cvB5ggxtpGKMMJSm7">Show on map</a>
-      </li>
-      <!-- <li>
-        <h3>Fontainhas</h3>
-        <p>Panjim's old Latin quarter, all colourful houses and quiet lanes. 40 minutes away.</p>
-        <a data-map="Fontainhas, Panjim, Goa" href="https://www.google.com/maps">Show on map</a>
-      </li>
-      <li>
-        <h3>Anjuna flea market</h3>
-        <p>Wednesdays only. Go early and bargain hard. 15 minutes away.</p>
-        <a data-map="Anjuna Flea Market, Goa" href="https://www.google.com/maps">Show on map</a>
-      </li> -->
-    </ul>
-  </section>
 
   <section class="block" aria-labelledby="help-title">
     <h2 id="help-title">Questions?</h2>
