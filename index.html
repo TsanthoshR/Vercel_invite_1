@@ -285,12 +285,10 @@
   .invite > * { max-width: 36rem; margin-inline: auto; }
 
   .hero {
-    min-height: 88vh;
-    min-height: 88svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-block: 3.5rem 2rem;
+    padding-block: 2.5rem 0.5rem;
   }
   .hero-lead { margin: 0 0 1.25rem; color: var(--muted); }
   .names {
@@ -730,6 +728,11 @@
   .map-btn svg { width: 1.05rem; height: 1.05rem; flex: none; color: var(--marigold); }
   .cal-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .25rem; }
   .cal-links .map-btn { margin-top: 0; }
+  section[aria-labelledby="events-title"] { padding-top: 2.5rem; }
+  .venue-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; margin: .75rem 0 0; }
+  .venue-label { font-weight: 500; color: var(--ink); }
+  .venue-row .map-btn { margin-top: 0; padding: .4rem .9rem .4rem .7rem; font-size: .9rem; }
+  .event-highlight .venue-row { margin-top: 1rem; }
 </style>
 </head>
 <body class="is-locked">
@@ -818,7 +821,7 @@
         <div class="event-body">
           <h3>Wedding</h3>
           <p><span class="pending">Time to follow</span><br>Reception straight after, location to follow</p>
-          <a class="map-btn" href="https://maps.app.goo.gl/wa9dnhxw2aCehfdC8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open location</span></a>
+          <p class="venue-row"><span class="venue-label">Our Lady of Annunciation Church</span><a class="map-btn" href="https://maps.app.goo.gl/wa9dnhxw2aCehfdC8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a></p>
         </div>
       </li>
       <li class="event" data-event="reception">
@@ -826,7 +829,7 @@
         <div class="event-body">
           <h3>Reception</h3>
           <p><span class="pending">Time to follow</span></p>
-          <a class="map-btn" href="https://maps.app.goo.gl/CvbAhAstUTgi3CuE7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open location</span></a>
+          <p class="venue-row"><span class="venue-label">Raja Rathinam Mahal</span><a class="map-btn" href="https://maps.app.goo.gl/CvbAhAstUTgi3CuE7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a></p>
         </div>
       </li>
     </ol>
@@ -840,8 +843,8 @@
       </div>
       <div>
         <h3>Reception</h3>
-        <p>Evening 6:30 PM onwards <br>Shakuntalam Hall, Anushaktinagar/ Mumbai</p>
-        
+        <p>Evening, 6:30 PM onwards</p>
+        <p class="venue-row"><span class="venue-label">Shakuntalam Hall, Anushaktinagar</span><a class="map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Shakuntalam+Hall+Anushaktinagar+Mumbai" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a></p>
       </div>
     </div>
     
@@ -922,17 +925,7 @@
       </div>
 
     
-    <p class="venue-name">Our Lady of Annunciation Church</p>
-    <p class="venue-address">Nagercoil, Tamil Nadu</p>
-    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Our+Lady+of+Annunciation+Church+Nagercoil" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a>
-    
-    <p class="venue-name">JB Residency</p>
-    <p class="venue-address">Virudhunagar, Tamil Nadu</p>
-    
-    
-    <p class="venue-name">Shakuntalam Hall</p>
-    <p class="venue-address">Anushaktinagar, Mumbai</p>
-    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Shakuntalam+Hall+Anushaktinagar+Mumbai" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a>
+
 
 
           
@@ -945,35 +938,6 @@
     
   </section>
 
-
-  <section class="block" aria-labelledby="help-title">
-    <h2 id="help-title">Questions?</h2>
-    <p class="lede">Call or message either of them. They know everything we know.</p>
-    <ul class="contacts">
-      <li>
-        <div>
-          <p class="contact-name">Rohan</p>
-          <p class="contact-role">For travel, rooms and cabs</p>
-          <p class="contact-num">+91 90000 00001</p>
-        </div>
-        <div class="contact-actions">
-          <a href="tel:+919000000001">Call</a>
-          <a href="https://wa.me/919000000001" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </li>
-      <li>
-        <div>
-          <p class="contact-name">Meera</p>
-          <p class="contact-role">For anything on the day</p>
-          <p class="contact-num">+91 90000 00002</p>
-        </div>
-        <div class="contact-actions">
-          <a href="tel:+919000000002">Call</a>
-          <a href="https://wa.me/919000000002" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </li>
-    </ul>
-  </section>
 
   <section class="block" id="dress" aria-labelledby="dress-title">
     <h2 id="dress-title">Dress code</h2>
