@@ -733,6 +733,8 @@
   .venue-label { font-weight: 500; color: var(--ink); }
   .venue-row .map-btn { margin-top: 0; padding: .4rem .9rem .4rem .7rem; font-size: .9rem; }
   .event-highlight .venue-row { margin-top: 1rem; }
+  .cal-save { margin-top: 0; }
+  .cal-note { margin: 0; font-size: .9rem; color: var(--muted); }
 </style>
 </head>
 <body class="is-locked">
@@ -842,9 +844,9 @@
         <span class="month-year">Jan 2027<br> Saturday</span>
       </div>
       <div>
-        <h3>Reception</h3>
+        <h3>Mumbai Reception</h3>
         <p>Evening, 6:30 PM onwards</p>
-        <p class="venue-row"><span class="venue-label">Shakuntalam Hall, Anushaktinagar</span><a class="map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Shakuntalam+Hall+Anushaktinagar+Mumbai" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a></p>
+        <p class="venue-row"><span class="venue-label">Shakuntalam Hall, Anushaktinagar, Mumbai</span><a class="map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Shakuntalam+Hall+Anushaktinagar+Mumbai" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Open in Maps</span></a></p>
       </div>
     </div>
     
@@ -975,7 +977,8 @@
 
   <footer class="foot">
     <p class="foot-mono">S &amp; T</p>
-    <div class="cal-links" id="calLinks" aria-label="Add each event to Google Calendar"></div>
+    <button type="button" class="map-btn cal-save" id="icsBtn">Save all dates to your phone calendar</button>
+    <p class="cal-note">Downloads one file. It opens in your phone's calendar app, no sign-in needed.</p>
     <button type="button" class="btn-link" id="replay">Open the envelope again</button>
   </footer>
 </main>
@@ -1000,14 +1003,14 @@
     // Preview only: used when the link has no ?to=
     // Add &e=wedding,reception to a link to invite that family to only those events.
     demoGuest: "Friends",
-    // One calendar entry per date. All-day where the time isn't set yet.
-    // Timed entries use local time in ctz (Asia/Kolkata). The end time is assumed; change it if needed.
+    // Calendar entries. allDay: [start, end-exclusive] as YYYYMMDD.
+    // Timed entries use UTC: 6:30 pm IST = 13:00 UTC, 9:30 pm IST = 16:00 UTC.
     calendarEvents: [
-      { title: "Sangeet", dates: "20261226/20261227", location: "", details: "Sangeet. Dark and flashy." },
-      { title: "Dinner", dates: "20261227/20261228", location: "", details: "Dinner. Time to follow." },
-      { title: "Wedding", dates: "20261228/20261229", location: "https://maps.app.goo.gl/wa9dnhxw2aCehfdC8", details: "Wedding. Time to follow. Reception straight after, location to follow. Men: black suit. Women: details to follow." },
-      { title: "Reception", dates: "20261229/20261230", location: "https://maps.app.goo.gl/CvbAhAstUTgi3CuE7", details: "Reception. Time to follow. Ethnic wear." },
-      { title: "Reception, Mumbai", dates: "20270109T183000/20270109T213000", ctz: "Asia/Kolkata", location: "Shakuntalam Hall, Anushaktinagar, Mumbai", details: "Reception, 6:30 pm onwards. Shakuntalam Hall." }
+      { title: "Sangeet", allDay: ["20261226", "20261227"], location: "", details: "Sangeet. Dark and flashy." },
+      { title: "Dinner", allDay: ["20261227", "20261228"], location: "", details: "Dinner. Time to follow." },
+      { title: "Wedding", allDay: ["20261228", "20261229"], location: "Our Lady of Annunciation Church, Kattuvilai", details: "Time to follow. Reception straight after, location to follow. Men: black suit. Women: details to follow." },
+      { title: "Reception", allDay: ["20261229", "20261230"], location: "Raja Rathinam Mahal", details: "Time to follow. Ethnic wear." },
+      { title: "Mumbai Reception", start: "20270109T130000Z", end: "20270109T160000Z", location: "Shakuntalam Hall, Anushaktinagar, Mumbai", details: "Evening, 6:30 pm onwards." }
     ]
   };
 
@@ -1353,22 +1356,38 @@
     a.rel = "noopener";
   });
 
-  const calBox = $("calLinks");
-  CONFIG.calendarEvents.forEach((ev) => {
-    const url = new URL("https://calendar.google.com/calendar/render");
-    url.searchParams.set("action", "TEMPLATE");
-    url.searchParams.set("text", `${ev.title}: ${CONFIG.couple}`);
-    url.searchParams.set("dates", ev.dates);
-    if (ev.ctz) url.searchParams.set("ctz", ev.ctz);
-    if (ev.location) url.searchParams.set("location", ev.location);
-    url.searchParams.set("details", ev.details);
+  /* Calendar file (.ics): opens in the phone's calendar app. No sign-in needed. */
+  const icsEscape = (t) => String(t).replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,");
+  const icsFold = (line) => {
+    const parts = [];
+    let rest = line;
+    while (rest.length > 73) { parts.push(rest.slice(0, 73)); rest = " " + rest.slice(73); }
+    parts.push(rest);
+    return parts.join("\r\n");
+  };
+  function buildIcs() {
+    const stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+    const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Santhosh and Theodosia//Wedding//EN", "CALSCALE:GREGORIAN"];
+    CONFIG.calendarEvents.forEach((ev, i) => {
+      lines.push("BEGIN:VEVENT", `UID:${i}-${ev.title.replace(/\W+/g, "")}@santhosh-theodosia`, `DTSTAMP:${stamp}`);
+      if (ev.allDay) lines.push(`DTSTART;VALUE=DATE:${ev.allDay[0]}`, `DTEND;VALUE=DATE:${ev.allDay[1]}`);
+      else lines.push(`DTSTART:${ev.start}`, `DTEND:${ev.end}`);
+      lines.push(`SUMMARY:${icsEscape(`${ev.title}, ${CONFIG.couple}`)}`);
+      if (ev.location) lines.push(`LOCATION:${icsEscape(ev.location)}`);
+      lines.push(`DESCRIPTION:${icsEscape(ev.details)}`, "END:VEVENT");
+    });
+    lines.push("END:VCALENDAR");
+    return lines.map(icsFold).join("\r\n") + "\r\n";
+  }
+  $("icsBtn").addEventListener("click", () => {
+    const url = URL.createObjectURL(new Blob([buildIcs()], { type: "text/calendar;charset=utf-8" }));
     const a = document.createElement("a");
-    a.className = "map-btn";
-    a.href = url.toString();
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.textContent = `Add ${ev.title}`;
-    calBox.append(a);
+    a.href = url;
+    a.download = "santhosh-theodosia-wedding.ics";
+    document.body.append(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
 
   // refresh();
