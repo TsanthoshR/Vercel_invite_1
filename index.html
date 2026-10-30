@@ -728,6 +728,8 @@
   }
   .map-btn:hover { border-color: var(--ink); background: var(--field); }
   .map-btn svg { width: 1.05rem; height: 1.05rem; flex: none; color: var(--marigold); }
+  .cal-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .25rem; }
+  .cal-links .map-btn { margin-top: 0; }
 </style>
 </head>
 <body class="is-locked">
@@ -1009,7 +1011,7 @@
 
   <footer class="foot">
     <p class="foot-mono">S &amp; T</p>
-    <a id="calLink" href="https://calendar.google.com/" target="_blank" rel="noopener">Add the dates to Google Calendar</a>
+    <div class="cal-links" id="calLinks" aria-label="Add each event to Google Calendar"></div>
     <button type="button" class="btn-link" id="replay">Open the envelope again</button>
   </footer>
 </main>
@@ -1034,12 +1036,15 @@
     // Preview only: used when the link has no ?to=
     // Add &e=wedding,reception to a link to invite that family to only those events.
     demoGuest: "Friends",
-    calendar: {
-      // All-day, 26 to 29 December. The end date is the day after the last event.
-      start: "20261226",
-      end: "20261230",
-      details: "Sangeet on the 26th, dinner on the 27th, wedding on the 28th and reception on the 29th."
-    }
+    // One calendar entry per date. All-day where the time isn't set yet.
+    // Timed entries use local time in ctz (Asia/Kolkata). The end time is assumed; change it if needed.
+    calendarEvents: [
+      { title: "Sangeet", dates: "20261226/20261227", location: "", details: "Sangeet. Dark and flashy." },
+      { title: "Dinner", dates: "20261227/20261228", location: "", details: "Dinner. Time to follow." },
+      { title: "Wedding", dates: "20261228/20261229", location: "https://maps.app.goo.gl/wa9dnhxw2aCehfdC8", details: "Wedding. Time to follow. Reception straight after, location to follow. Men: black suit. Women: details to follow." },
+      { title: "Reception", dates: "20261229/20261230", location: "https://maps.app.goo.gl/CvbAhAstUTgi3CuE7", details: "Reception. Time to follow. Ethnic wear." },
+      { title: "Reception, Mumbai", dates: "20270109T183000/20270109T213000", ctz: "Asia/Kolkata", location: "Shakuntalam Hall, Anushaktinagar, Mumbai", details: "Reception, 6:30 pm onwards. Shakuntalam Hall." }
+    ]
   };
 
   const $ = (id) => document.getElementById(id);
@@ -1384,13 +1389,23 @@
     a.rel = "noopener";
   });
 
-  const cal = new URL("https://calendar.google.com/calendar/render");
-  cal.searchParams.set("action", "TEMPLATE");
-  cal.searchParams.set("text", `${CONFIG.couple}'s wedding`);
-  cal.searchParams.set("dates", `${CONFIG.calendar.start}/${CONFIG.calendar.end}`);
-  cal.searchParams.set("location", CONFIG.venue);
-  cal.searchParams.set("details", CONFIG.calendar.details);
-  $("calLink").href = cal.toString();
+  const calBox = $("calLinks");
+  CONFIG.calendarEvents.forEach((ev) => {
+    const url = new URL("https://calendar.google.com/calendar/render");
+    url.searchParams.set("action", "TEMPLATE");
+    url.searchParams.set("text", `${ev.title}: ${CONFIG.couple}`);
+    url.searchParams.set("dates", ev.dates);
+    if (ev.ctz) url.searchParams.set("ctz", ev.ctz);
+    if (ev.location) url.searchParams.set("location", ev.location);
+    url.searchParams.set("details", ev.details);
+    const a = document.createElement("a");
+    a.className = "map-btn";
+    a.href = url.toString();
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = `Add ${ev.title}`;
+    calBox.append(a);
+  });
 
   // refresh();
 })();
